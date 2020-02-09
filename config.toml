@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://pimo-wpf.netlify.com/"
 languageCode = "fr-fr"
 title = "Around C# and WPF"
 
