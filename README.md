@@ -1,4 +1,4 @@
-Around C# and WPF [![Netlify Status](https://api.netlify.com/api/v1/badges/0ddc6fed-bc69-4db4-a027-e873fc711646/deploy-status)](https://app.netlify.com/sites/pimo-wpf/deploys)<!-- omit in toc --> 
+Around C# and WPF <!-- omit in toc --> 
 =================
 
 ## Table des matières <!-- omit in toc --> 
