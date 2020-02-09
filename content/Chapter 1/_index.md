@@ -8,6 +8,6 @@ pre = "<b>1. </b>"
 
 ### Chapter 1
 
-# What is XAML ? 
+# What is XAML ?. 
 
 Lorem Ipsum.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
