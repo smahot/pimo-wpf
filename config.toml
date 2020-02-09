@@ -3,7 +3,7 @@ languageCode = "fr-fr"
 title = "Around C# and WPF"
 
 # Change the default theme to be use when building the site with Hugo
-theme = "hugo-theme-learn"
+theme = "hugo-theme-learn-master"
 
 # For search functionality
 [outputs]
