@@ -1,9 +1,15 @@
 baseURL = "https://pimo-wpf.netlify.com/"
 languageCode = "fr-fr"
-title = "Around C# and WPF"
+#title = "Around C# and WPF"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
+
+# French is the default language
+defaultContentLanguage = "fr"
+# Force to have /en/my-page and /fr/my-page routes, even for default language.
+defaultContentLanguageInSubdir= true
+
 
 # For search functionality
 [outputs]
@@ -12,3 +18,16 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "purple"
+  disableLanguageSwitchingButton = false
+
+
+[Languages]
+[Languages.fr]
+title = "Around C# and WPF"
+weight = 1
+languageName = "Français"
+
+[Languages.en]
+title = "Around C# and WPF"
+weight = 2
+languageName = "English"

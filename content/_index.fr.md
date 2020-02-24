@@ -1,5 +1,5 @@
 +++
-title = "Home Page"
+title = "Page d'accueil"
 weight = 1
 +++
 
@@ -34,7 +34,7 @@ Le site est en cours de construction, tout le contenu est sujet à modification.
 ### Chapitre 5
  - Autres objets et intéraction avec les variables
 
-### Chapitre 6 & 7
+### Chapitre 6
  - Data binding
 
 ## Projet final : Gestion de l'inventaire d'un restaurant
