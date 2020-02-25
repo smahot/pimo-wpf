@@ -4,8 +4,8 @@ weight = 5
 tags = ["tutorial", "template"]
 +++
 
-Le retour du PIMO
-==============================
+Le retour du PIMO <!-- omit in toc -->
+=================
 
 
 
@@ -16,12 +16,10 @@ Il est conseillé d'utiliser un éditeur de texte comme [Visual Studio Code](htt
 _Bref texte d’introduction_
 
 #### Sommaire avec lien vers les parties
-- [Le retour du PIMO](#le-retour-du-pimo)
-      - [Sommaire avec lien vers les parties](#sommaire-avec-lien-vers-les-parties)
-  - [A. Une nouvelle aube](#a-une-nouvelle-aube)
-    - [a. _Felix Felicis_](#a-felix-felicis)
-    - [b. Au pays des ~~éponges~~](#b-au-pays-des-s%c3%a9pongess)
-  - [B. Un nouveau crépuscule](#b-un-nouveau-cr%c3%a9puscule)
+- [A. Une nouvelle aube](#a-une-nouvelle-aube)
+  - [a. _Felix Felicis_](#a-felix-felicis)
+  - [b. Au pays des ~~éponges~~](#b-au-pays-des-s%c3%a9pongess)
+- [B. Un nouveau crépuscule](#b-un-nouveau-cr%c3%a9puscule)
 
 ---
 
