@@ -44,4 +44,4 @@ You’ll be the manager of a restaurant. The graphical UI will show the main r
 ## Sources
 
  - [Wikipedia WPF](https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation)
- - [Documentation of Microsoft](https://docs.microsoft.com/fr-fr/dotnet/framework/wpf/getting-started/)
+ - [Documentation of Microsoft](https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/)
