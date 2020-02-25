@@ -8,7 +8,7 @@ theme = "hugo-theme-learn"
 # French is the default language
 defaultContentLanguage = "fr"
 # Force to have /en/my-page and /fr/my-page routes, even for default language.
-defaultContentLanguageInSubdir= true
+defaultContentLanguageInSubdir = true
 
 
 # For search functionality
@@ -31,3 +31,23 @@ languageName = "Français"
 title = "Around C# and WPF"
 weight = 2
 languageName = "English"
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fas fa-file-code'></i> Template"
+url = "/template"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-file-code'></i> Template"
+url = "/template"
+weight = 20
+
+[[Languages.fr.menu.shortcuts]] 
+name = "<i class='fas fa-tags'></i> Tags"
+url = "/tags"
+weight = 30
+
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fas fa-tags'></i> Tags"
+url = "/tags"
+weight = 30
