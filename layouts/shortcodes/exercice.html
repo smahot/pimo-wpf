@@ -1,0 +1,40 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<style>
+div.exercice p {
+    border-top: 30px solid #7C7E80;
+    background: #E6EAED;
+}
+div.exercice p:first-child:after {
+    content: 'Exercice';
+}
+
+div.exercice {
+    margin: 2rem 0;
+    position: relative;
+}
+div.exercice p {
+    padding: 15px;
+    display: block;
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #333;
+}
+div.exercice p:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    left: 10px;
+}
+div.exercice p:first-child:after {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    left: 2rem;
+}
+</style>
+
+<div class="exercice">{{ .Inner }}</div>
