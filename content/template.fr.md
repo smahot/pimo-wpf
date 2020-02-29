@@ -124,7 +124,7 @@ Tableau en markdown
 
 
 
-{{% expand-bold "Autres shortcodes" %}}
+{{% expand "Autres shortcodes" bold %}}
  - [Hugo custom shortcode](https://gohugo.io/templates/shortcode-templates/)
  - [docdock theme](https://theme-hugo-docdock-demo.aerobaticapp.com/shortcodes/)
  - [learn theme](https://learn.netlify.com/en/shortcodes/)
