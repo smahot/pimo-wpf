@@ -4,7 +4,6 @@ weight = 1001
 pre = "<b>1.1 </b>"
 +++
 
-
 Visual studio est un ensemble complet d’outils permettant la création d’applications, notamment des applications WPF qui sont le sujet du cours. WPF est une approche de Windows visant à gérer l’interface graphique d’une application (GUI).  
 
 Afin de télécharger Visual Studio 2019, rendez-vous sur [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)

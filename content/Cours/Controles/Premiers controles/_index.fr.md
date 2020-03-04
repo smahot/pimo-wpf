@@ -4,7 +4,8 @@ weight = 2001
 pre = "<b>2.1 </b>"
 +++
 
-### A. Les premiers contrôles
+- [a. Création d’un bouton](#a-cr%c3%a9ation-dun-bouton)
+- [b. Les autres contrôles](#b-les-autres-contr%c3%b4les)
 
 #### a. Création d’un bouton
 
@@ -71,7 +72,7 @@ Pour cet exemple, mettez la valeur de Margin à 0, et testez différentes config
     <Button Content="Hello ! (3)" HorizontalAlignment="center" VerticalAlignment="Top" Width="100" Height="100"/> 
 {{%/expand%}}
 
----
+
 
 **Margin** : donne les coordonnées par rapport à ce point absolu. Il donne la ‘’marge’’, c’est-à-dire la distance en pixel du contrôle par rapport au point d’origine quand il n’est pas dans un layouts (que vous verrez plus tard). Les 4 marges sont définies, ainsi ‘’10,5,0,15’’ signifie une marge à gauche de 10px, une marge en haut de 5px, une marge à droite de 0px et une marge en bas de 15px. Il existe deux manières de définir la marge : soit en ne déclarant juste un nombre (exemple : Margin=’’10’’) où chaque marge fera donc 10px, ou en déclarant les 4 marges séparément.
 
@@ -112,7 +113,7 @@ Essayez d’utiliser tous ces attributs sur plusieurs boutons pour découvrir le
 
 ---
 
-#### b. Les autres contrôles :
+#### b. Les autres contrôles
 
 Tout d’abord, n’oubliez pas que les attributs présentés dans la parties précédents (Width, Margin, FontSize…) sont hérités. Ils ne sont pas réservés à seulement les boutons. Ils peuvent donc être utilisés pour les autres contrôles. Pas besoin de tous les re-lister donc pour chaque autre contrôle. 
 
@@ -211,7 +212,6 @@ Créez un Listbox contenant au moins 4 choix avec chacun une couleur différente
 ```
 {{%/expand%}}
 
---- 
 ---
 
 {{% button href="/fr/exercices/c2/part1/" %}}Lien vers les exercices{{% /button %}}
