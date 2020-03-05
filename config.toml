@@ -17,8 +17,22 @@ home = [ "HTML", "RSS", "JSON"]
 
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
-  themeVariant = "purple"
+  themeVariant = "custom"
+
+  # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = false
+
+  # Shows a checkmark for visited pages on the menu
+  showVisitedLinks = true
+
+  # Set this to true to disable copy-to-clipboard button for inline code.
+  disableInlineCopyToClipBoard = true
+
+  # Hide breadcrumbs in the header and only show the current page title
+  disableBreadcrumb = false
+
+  # Description of the site, will be used in meta information
+  description = "MOOC about C# and WPF"
 
 
 [Languages]
