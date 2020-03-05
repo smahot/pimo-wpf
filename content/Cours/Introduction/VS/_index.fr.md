@@ -10,7 +10,7 @@ Afin de télécharger Visual Studio 2019, rendez-vous sur [https://visualstudio.
 
 Plusieurs choix d’installation sont disponibles, choisissez *Community 2019*. Le téléchargement de l’installateur commence alors. 
 
-![image1](/img/1.1/im1.png?height=300px)
+![image1](/img/1.1/im1.png?height=200px)
 
 Cliquez sur continuer. 
 
