@@ -65,3 +65,13 @@ weight = 30
 name = "<i class='fas fa-tags'></i> Tags"
 url = "/tags"
 weight = 30
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Code source"
+url = "https://github.com/smahot/pimo-wpf"
+weight = 50
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Source code"
+url = "https://github.com/smahot/pimo-wpf"
+weight = 50
