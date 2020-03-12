@@ -4,14 +4,14 @@ weight = 2002
 pre = "<b>2.2 </b>"
 +++
 
-En WPF, un événement est déclenché lorsqu’une action de l’utilisateur interagit avec les objets (bouton, image...) dans la fenêtre affichée. Ces événements permettent d’impacter l’environnement et des méthodes peuvent être rattachées à ceux-ci. 
-
 - [a. Comment affecter un evenement a un objet](#a-comment-affecter-un-evenement-a-un-objet)
 - [b. Liste des événements](#b-liste-des-%c3%a9v%c3%a9nements)
 - [c. Les événements routés](#c-les-%c3%a9v%c3%a9nements-rout%c3%a9s)
     - [Direct Event](#direct-event)
     - [Bubbling Event](#bubbling-event)
     - [Tunnel Events](#tunnel-events)
+
+En WPF, un événement est déclenché lorsqu’une action de l’utilisateur interagit avec les objets (bouton, image...) dans la fenêtre affichée. Ces événements permettent d’impacter l’environnement et des méthodes peuvent être rattachées à ceux-ci. 
 
 ## a. Comment affecter un evenement a un objet
 
@@ -20,6 +20,7 @@ Pour affecter un évènement à un objet :
  - Sélectionner l’objet. 
 
 ![image1](/img/2.2/img01.png?height=300px)
+
  - Choisir un évènement dans le menu “propriétés” de l’objet (en bas à droite de votre environnement Visual studio), 
 
 ![image2](/img/2.2/img02.png?height=300px)
@@ -64,13 +65,13 @@ Il existe trois types d’événements routés :
  - Bubbling Event
  - Tunneling Event
 
- #### Direct Event 
+#### Direct Event 
 
 Les événements directs sont des événements qui sont seulement activés par l’élément dans lequel l’événement est implémenté. L’évènement n’est pas propagé. 
 
 Par exemple, l’événement que nous avons créé un peu plus haut est un événement direct. 
 
- #### Bubbling Event 
+#### Bubbling Event 
 
 L’événement est traité au niveau de l’élément source puis successivement par chaque niveau de conteneur (dans le sens montant) jusqu'à la racine de l’arbre. D’où l’analogie avec une bulle qui remonte à la surface. 
 
