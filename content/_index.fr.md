@@ -30,6 +30,7 @@ Le site est en cours de construction, tout le contenu est sujet à modification.
  - Création d’un bouton 
  - Explication sur la classe bouton 
  - D’autres contrôles 
+
 #### b. Les évènements 
  - Listes des évènements les plus utilisés
 
@@ -40,25 +41,15 @@ Le site est en cours de construction, tout le contenu est sujet à modification.
  - DockPanel
  - CanvasPanel
  - GridPanel
+
 #### b. Création de Contrôles depuis C#
  - Création de contrôles depuis C#
  - Agencement dynamique (oui, à préciser) 
 
 ### Chapitre 4 : Databinding
 #### a. OneWay Databinding
+
 #### b. TwoWay Databinding 
-
-## Projet final : Gestion de l'inventaire d'un restaurant
-
-Vous serez le gérant d'un restaurant.
-L'interface graphique graphique montrera la pièce principale et le stock d'ingrédients, ainsi que des fenêtres supplémentaires pour les recettes et les produits à acheter.
-
-Au final, l'utilisateur devra pouvoir :
- - Cliquer sur une table
- - Attribuer un repas à la table indiquée
-
-L'application vérifiera si le stock peut gérer la commande.
-Des fonctionnalités supplémentaires telles que le réapprovisionnement des stocks et le suivi de l'équilibre monétaire du restaurant pourraient être intéressantes.
 
 ## Sources
 
