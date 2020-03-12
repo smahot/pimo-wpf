@@ -16,26 +16,37 @@ Le site est en cours de construction, tout le contenu est sujet à modification.
  - Notions basiques de C# : [MOOC OpenClassroom](https://openclassrooms.com/fr/courses/1526901-apprenez-a-developper-en-c)
 
 ## Chapitres
-### Chapitre 1
- - Installation de l'environnement de travail : Visual Studio / VS Code + Github
- - Présentation de Visual Studio
- - Introduction de WPF
+### Chapitre 1 : Bienvenue sur WPF !
+#### a. Visual Studio 
+ - Installation 
+ - Lancement du premier projet 
+ - Explication de l’environnement (toolbox, différentes fenêtres…) 
 
-### Chapitre 2
- - Présentation de différents objets comme les boutons, checkbox ainsi leurs attributs (fond, taille de police …) 
+#### b. Présentation de XAML 
+ - Les notions sur les balises (xml ?)
 
-### Chapitre 3
- - Gestion des événements
+### Chapitre 2 : Les contrôles 
+#### a. Les premiers contrôles 
+ - Création d’un bouton 
+ - Explication sur la classe bouton 
+ - D’autres contrôles 
+#### b. Les évènements 
+ - Listes des évènements les plus utilisés
 
-### Chapitre 4
- - Comment structurer l'application ?
- - Comment designer l'application ? 
+### Chapitre 3 : L’agencement
+#### a. Les layouts
+ - StackPanel
+ - WrapPanel
+ - DockPanel
+ - CanvasPanel
+ - GridPanel
+#### b. Création de Contrôles depuis C#
+ - Création de contrôles depuis C#
+ - Agencement dynamique (oui, à préciser) 
 
-### Chapitre 5
- - Autres objets et intéraction avec les variables
-
-### Chapitre 6
- - Data binding
+### Chapitre 4 : Databinding
+#### a. OneWay Databinding
+#### b. TwoWay Databinding 
 
 ## Projet final : Gestion de l'inventaire d'un restaurant
 
