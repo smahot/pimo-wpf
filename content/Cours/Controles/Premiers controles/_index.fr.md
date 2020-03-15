@@ -214,4 +214,4 @@ Créez un Listbox contenant au moins 4 choix avec chacun une couleur différente
 
 ---
 
-{{% button href="/fr/exercices/c2/part1/" %}}Lien vers les exercices{{% /button %}}
+{{% button href="/exercices/c2/part1/" %}}Lien vers les exercices{{% /button %}}

@@ -147,4 +147,4 @@ Si vous cliquez sur le rectangle, l’évènement atteindra la grille mais n’i
 
 ---
 
-{{% button href="/fr/exercices/c2/part2/" %}}Lien vers les exercices{{% /button %}}
+{{% button href="/exercices/c2/part2/" %}}Lien vers les exercices{{% /button %}}

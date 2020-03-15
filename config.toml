@@ -8,7 +8,7 @@ theme = "hugo-theme-learn"
 # French is the default language
 defaultContentLanguage = "fr"
 # Force to have /en/my-page and /fr/my-page routes, even for default language.
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 
 
 # For search functionality
@@ -20,7 +20,7 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "custom"
 
   # When using mulitlingual website, disable the switch language button.
-  disableLanguageSwitchingButton = false
+  disableLanguageSwitchingButton = true
 
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
