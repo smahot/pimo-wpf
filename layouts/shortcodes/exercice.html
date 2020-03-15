@@ -4,8 +4,13 @@ div.exercice div {
     border-top: 30px solid #7C7E80;
     background: #E6EAED;
 }
-div.exercice div:first-child:after {
-    content: 'Exercice';
+div.exercice div:first-child:after {    
+    {{ if len .Params | eq 1 }}
+        content: "{{ .Get 0 }}";
+    {{else}}
+        content: 'Exercice';
+    {{end}}
+
 }
 
 div.exercice {
