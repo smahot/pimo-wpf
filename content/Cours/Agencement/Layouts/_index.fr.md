@@ -25,7 +25,7 @@ Une fois que la grille a été créée, il faut définir le nombre de lignes et 
     <Grid.ColumnDefinitions>
         <ColumnDefinition Width="2*"/>
         <ColumnDefinition Width="1*"/>
-        <ColumnDefinition Width="1*"/>        
+        <ColumnDefinition Width="1*"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
         <RowDefinition Height="2*"/>
@@ -35,7 +35,7 @@ Une fois que la grille a été créée, il faut définir le nombre de lignes et 
 </Grid>
 ```
 
-Dans cet exemple, nous définissons une grille de 3 lignes et 3 colonnes. Les attributs Width et Height permettent de déterminer la taille de la cellule. Le caractère * sert à obtenir des cellules de dimensions proportionnelle. Ainsi, la première colonne, de dimension 2* sera 2 fois plus grandes que les colonnes 2 et 3 de taille 1* (dont on peut simplifier l’écriture dans notre code en la notant *). Par défaut, les lignes et colonnes seront étendues sur toute la fenêtre XAML. On peut aussi donner un nombre précis de pixel que l’élément occupera :
+Dans cet exemple, nous définissons une grille de 3 lignes et 3 colonnes. Les attributs Width et Height permettent de déterminer la taille de la cellule. Le caractère `*` sert à obtenir des cellules de dimensions proportionnelle. Ainsi, la première colonne, de dimension 2* sera 2 fois plus grandes que les colonnes 2 et 3 de taille 1* (dont on peut simplifier l’écriture dans notre code en la notant `*`). Par défaut, les lignes et colonnes seront étendues sur toute la fenêtre XAML. On peut aussi donner un nombre précis de pixel que l’élément occupera :
 
 ```xml
 <ColumnDefinition Width="100"/>
@@ -100,7 +100,7 @@ Peut être obtenu en quelques lignes avec le code suivant :
     <Grid.RowDefinitions>
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>        
+        <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Button Grid.ColumnSpan="2">Button 1</Button>
     <Button Grid.Column="3">Button 2</Button>
@@ -116,6 +116,7 @@ Essayez d’obtenir grâce à la grille le résultat suivant :
 
 ![image3](/img/3.1/img03.png?height=200px)
 {{% expand "Correction" %}}
+
 ```xml
 <Grid>
     <Grid.ColumnDefinitions>
@@ -137,6 +138,7 @@ Essayez d’obtenir grâce à la grille le résultat suivant :
     <Button Content="Center" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
 </Grid>
 ```
+
 {{% /expand %}}
 
 ## b. StackPanel
@@ -190,7 +192,7 @@ Il faut remarquer que le Stack Panel ne tient pas compte de l’espace disponibl
     <Button VerticalAlignment="Bottom">button 3</Button>
     <Button VerticalAlignment="Bottom">button 4</Button>
     <Button VerticalAlignment="Center">button 5</Button>
-    <Button VerticalAlignment="Top">button 6</Button>            
+    <Button VerticalAlignment="Top">button 6</Button>
 </StackPanel>
 ```
 
@@ -208,7 +210,7 @@ Essayez d’obtenir grâce au Stack Panel le résultat suivant :
 
 ## c. WrapPanel
 
-Le Wrap Panel placera chacun des éléments les uns après les autres horizontalement (par défaut) ou verticalement, jusqu’à ce qu’il n’y ait plus assez de place pour rajouter un nouvel élément, auquel cas il retournera à la ligne ou la colonne d’après. On déclare un Wrap Panel comme cela : 
+Le Wrap Panel placera chacun des éléments les uns après les autres horizontalement (par défaut) ou verticalement, jusqu’à ce qu’il n’y ait plus assez de place pour rajouter un nouvel élément, auquel cas il retournera à la ligne ou la colonne d’après. On déclare un Wrap Panel comme cela :
 
 ```xml
 <WrapPanel></WrapPanel>
@@ -244,6 +246,8 @@ Essayez d’obtenir avec le Wrap Panel le résultat suivant :
 ![image9](/img/3.1/img09.png?height=300px)
 
 {{% expand "Correction" %}}
+
+```xml
 <WrapPanel VerticalAlignment="Top">
     <Rectangle Width="150" Height="150" Fill="White" Stroke="#FFFF0000" StrokeThickness="10"/>
     <Rectangle Width="150" Height="150" Fill="White" Stroke="#FFFF8400" StrokeThickness="10"/>
@@ -253,12 +257,13 @@ Essayez d’obtenir avec le Wrap Panel le résultat suivant :
     <Rectangle Width="150" Height="150" Fill="White" Stroke="#FF080E64" StrokeThickness="10"/>
     <Rectangle Width="150" Height="150" Fill="White" Stroke="#FFAB00FF" StrokeThickness="10"/>
 </WrapPanel>
+```
 
 {{% /expand %}}
 
-## d. DockPanel 
+## d. DockPanel
 
-Le Dock Panel est un outil qui permet de placer des éléments aisément à n’importe quel endroit de notre fenêtre XAML. Par défaut, le dernier élément sera placé au centre. Le Dock Panel se déclare comme suit : 
+Le Dock Panel est un outil qui permet de placer des éléments aisément à n’importe quel endroit de notre fenêtre XAML. Par défaut, le dernier élément sera placé au centre. Le Dock Panel se déclare comme suit :
 
 ```xml
 <DockPanel></DockPanel>
@@ -279,7 +284,7 @@ Voici un exemple d’utilisation de Dock Panel qui en montre bien la pertinence�
 
 Plusieurs choses sont à remarquer. On voit que la place des quatre premiers boutons est spécifiée à l’aide de la commande DockPanel.Dock, alors que celle du dernier bouton ne l’est pas, car par défaut la position du bouton est au centre. Entre les deux chevrons, on trouve le texte qui sera placé dans le bouton. Le premier bouton est placé à gauche, il prend donc tout l’espace de la colonne gauche. La largeur du bouton dépend de la taille du texte du bouton. Le second bouton est situé en haut de la fenêtre, il prend tout l’espace du haut qui n’est pas encore occupé par le premier bouton, et ainsi de suite…
 
-Le problème de l’inégalité de l’épaisseur des boutons peut être résolu comme suit : 
+Le problème de l’inégalité de l’épaisseur des boutons peut être résolu comme suit :
 
 ![image11](/img/3.1/img11.png?height=200px)
 
@@ -287,7 +292,7 @@ Le problème de l’inégalité de l’épaisseur des boutons peut être résolu
 <Grid>
     <DockPanel>
         <Button DockPanel.Dock="Top" Height="50">Top</Button>
-        <Button DockPanel.Dock="Bottom" Height="50">Bottom</Button>        
+        <Button DockPanel.Dock="Bottom" Height="50">Bottom</Button>
         <Button DockPanel.Dock="Left" Width="50">Left</Button>
         <Button DockPanel.Dock="Right" Width="50">Right</Button>
         <Button>Center</Button>
@@ -316,10 +321,10 @@ Enfin, on peut placer plusieurs boutons à gauche, plusieurs à droite …
 Essayez d’obtenir avec Dock Panel le résultat suivant :
 {{% /exercice %}}
 
-
 ![image13](/img/3.1/img13.png?height=200px)
 
 {{% expand "Correction" %}}
+
 ```xml
 <DockPanel>
     <Button Width ="150" Background="Black" DockPanel.Dock="Left"/>
@@ -333,9 +338,10 @@ Essayez d’obtenir avec Dock Panel le résultat suivant :
     <Button DockPanel.Dock="Right"/>
 </DockPanel>
 ```
+
 {{% /expand %}}
 
-## e. CanvasPanel 
+## e. CanvasPanel
 
 Le Canvas permet de placer des éléments en fonctions de coordonnées x et y. La Canvas ne fait absolument aucune modification par lui-même ; si par exemple deux boutons sont placés aux mêmes coordonnées, ils seront superposés et nous ne pourrons voir que le second bouton sur la fenêtre. Un Canvas se déclare de la façon suivante :
 
@@ -385,7 +391,7 @@ Comme nous l’avons dit plus haut, les éléments se superposent et apparaissen
 </Canvas>
 ```
 
-A chaque élément nous associons un index grâce à Panel.ZIndex. Si deux éléments se superposent, celui avec le ZIndex le plus fort sera celui qui sera visible sur la fenêtre XAML. Ainsi, dans notre exemple, l’ellipse, d’index 1, a un plus grand ZIndex que le rectangle, d’index 0. Sur notre fenêtre, on voit donc bien que l’ellipse recouvre le rectangle : 
+A chaque élément nous associons un index grâce à Panel.ZIndex. Si deux éléments se superposent, celui avec le ZIndex le plus fort sera celui qui sera visible sur la fenêtre XAML. Ainsi, dans notre exemple, l’ellipse, d’index 1, a un plus grand ZIndex que le rectangle, d’index 0. Sur notre fenêtre, on voit donc bien que l’ellipse recouvre le rectangle :
 
 ![image16](/img/3.1/img16.png?height=200px)
 
@@ -398,6 +404,7 @@ Essayez d’obtenir grâce au Canvas le résultat suivant :
 ![image17](/img/3.1/img17.png?height=200px)
 
 {{% expand "Correction" %}}
+
 ```xml
   <Canvas>
         <Rectangle Width="500" Height="170" Fill="Red" Canvas.Left="170" Canvas.Top="60"/>
@@ -409,6 +416,7 @@ Essayez d’obtenir grâce au Canvas le résultat suivant :
         <Button Content="Car" Canvas.Bottom="20" Canvas.Right="330" FontSize="50" Padding="20,5,20,5"/>
      </Canvas>
 ```
+
 {{% /expand %}}
 
 Pour aller plus loin…

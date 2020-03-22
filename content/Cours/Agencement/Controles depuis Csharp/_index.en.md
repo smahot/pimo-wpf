@@ -5,6 +5,6 @@ pre = "<b>3.2 </b>"
 +++
 
 
-### A. Creation of controls from C#
+## A. Creation of controls from Csharp
 
-### B. Dynamic agencement
+## B. Dynamic agencement

@@ -5,12 +5,12 @@ pre = "<b>3.1 </b>"
 +++
 
 
-### A. StackPanel 
+### A. StackPanel
 
-### B. WrapPanel 
+### B. WrapPanel
 
-### C. DockPanel 
+### C. DockPanel
 
-### D. CanvasPanel 
+### D. CanvasPanel
 
-### E. GridPanel 
+### E. GridPanel

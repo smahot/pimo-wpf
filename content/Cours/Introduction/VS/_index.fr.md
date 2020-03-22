@@ -8,11 +8,11 @@ Visual studio est un ensemble complet d’outils permettant la création d’app
 
 Afin de télécharger Visual Studio 2019, rendez-vous sur [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)
 
-Plusieurs choix d’installation sont disponibles, choisissez *Community 2019*. Le téléchargement de l’installateur commence alors. 
+Plusieurs choix d’installation sont disponibles, choisissez *Community 2019*. Le téléchargement de l’installateur commence alors.
 
 ![image1](/img/1.1/im1.png?height=200px)
 
-Cliquez sur continuer. 
+Cliquez sur continuer.
 
 ![image2](/img/1.1/im2.png?height=300px)
 
@@ -20,25 +20,25 @@ Seules les deux charges de travail suivantes vous seront nécessaires afin de cr
 
 ![image3-4](/img/1.1/im3-4.png?height=200px)
 
-Les étapes suivantes ne sont pas obligatoires, il est libre à vous de les modifier (non conseillé sauf pour le choix du langage au sein de Visual Studio 2019) : 
+Les étapes suivantes ne sont pas obligatoires, il est libre à vous de les modifier (non conseillé sauf pour le choix du langage au sein de Visual Studio 2019) :
 
- - Vous pourrez choisir d’installer certains composants individuels. Cependant, ne pas en rajouter parmi ceux déjà cochés ne nuira pas au bon fonctionnement de WPF. 
+- Vous pourrez choisir d’installer certains composants individuels. Cependant, ne pas en rajouter parmi ceux déjà cochés ne nuira pas au bon fonctionnement de WPF.
 
 ![image5](/img/1.1/im5.png?height=300px)
 
- - Vous pouvez ensuite choisir le langage : 
+- Vous pouvez ensuite choisir le langage :
 
 ![image6](/img/1.1/im6.png?height=300px)
 
- - Et enfin l’emplacement d’installation de Visual Studio 2019 : 
+- Et enfin l’emplacement d’installation de Visual Studio 2019 :
 
 ![image7](/img/1.1/im7.png?height=300px)
 
-Cliquez sur *Installer* en bas à droite. 
+Cliquez sur *Installer* en bas à droite.
 
-Le téléchargement prend en moyenne quelques dizaines de minutes. Lorsque ce dernier est terminé, redémarrez l’ordinateur. 
+Le téléchargement prend en moyenne quelques dizaines de minutes. Lorsque ce dernier est terminé, redémarrez l’ordinateur.
 
-Lancez ensuite Visual Studio 2019. 
+Lancez ensuite Visual Studio 2019.
 
 Connectez-vous avec un compte Windows créé au préalable (sinon, Visual Studio ne sera plus effectif au bout de 30 jours).
 
@@ -50,20 +50,19 @@ Choisissez pour le projet :
 
 Nommez le projet « Premiere_App_WPF » et créez le.
 
-
 ![image10](/img/1.1/im10.png?height=300px)
 
 ![image11](/img/1.1/im11.png?height=400px)
 
-L’explorateur de solutions à droite [1] permet de naviguer entre les différents fichiers du projet. 
+L’explorateur de solutions à droite [1] permet de naviguer entre les différents fichiers du projet.
 
-Pour placer des éléments à l’intérieur de notre page, il existe deux possibilités : 
+Pour placer des éléments à l’intérieur de notre page, il existe deux possibilités :
 
 1. *XAML* est un langage qui est utilisé dans le but de simplifier la disposition des éléments au sein de notre application.
     XAML utilise des balises (de la même manière que HTML) pour des applications Windows. On code alors directement notre XAML en bas de notre fenêtre Visual Studio pour faire apparaître les éléments.  
-    Les éléments peuvent s’écrire de deux manières : 
+    Les éléments peuvent s’écrire de deux manières :
      - Balises ouvrante/fermante (Ex : `<Button> </Button>`).  
-     - Balises uniques (Ex :`<Button/>`) 
+     - Balises uniques (Ex :`<Button/>`)
 
     On peut noter que les éléments peuvent s’imbriquer les uns les autres. On peut donc avoir une image à l’intérieur d’un bouton par exemple : `<Button <Image/> />`.
 
@@ -71,5 +70,4 @@ Pour placer des éléments à l’intérieur de notre page, il existe deux possi
     Il suffit de glisser ce que l’on veut dans notre fenêtre. Notez que ce drag and drop implique une création de code automatique dans le fichier XAML.
     Notre interface graphique est gérée par le fichier XAML.
 
-Par la suite, nous verrons comment créer des attributs pour gérer la taille par exemple ou des comportements spécifiques pour les éléments graphiques comme l’affichage de texte lorsqu’un bouton est cliqué. 
-
+Par la suite, nous verrons comment créer des attributs pour gérer la taille par exemple ou des comportements spécifiques pour les éléments graphiques comme l’affichage de texte lorsqu’un bouton est cliqué.
