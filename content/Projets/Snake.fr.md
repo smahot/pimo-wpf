@@ -9,7 +9,17 @@ pre = "<b>1. </b>"
 - [Première Partie](#première-partie)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
-  - [Pour aller plus loin](#pour-aller-plus-loin)
+  - [Question 3](#question-3)
+  - [Question 4](#question-4)
+  - [Question 5](#question-5)
+  - [Question 6](#question-6)
+  - [Question 7](#question-7)
+  - [Question 8](#question-8)
+- [Deuxième Partie](#deuxième-partie)
+  - [Question 9](#question-9)
+  - [Question 10](#question-10)
+  - [Question 11](#question-11)
+- [Pour aller plus loin](#pour-aller-plus-loin)
 
 ## Première Partie
 
@@ -46,6 +56,8 @@ Le code suivant permet de créer une grille avec 5 colonnes et 5 lignes de taill
         <ColumnDefinition Width="25"/>
     </Grid.ColumnDefinitions>
 </Grid>
+```
+
 {{% /expand %}}
 
 ### Question 3
@@ -351,6 +363,6 @@ switch (_direction)
 
 {{% /expand %}}
 
-### Pour aller plus loin
+## Pour aller plus loin
 
 Faites-en sorte que le SNAKE s’agrandisse quand il mange.
