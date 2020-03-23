@@ -1,7 +1,7 @@
 +++
 title = "Snake Game"
-weight = 3001
-pre = "<b>1. </b>"
+weight = 3003
+pre = "Projet chapitre 3 : "
 +++
 
 ![image1](/img/snake/img01.png?height=300px)
