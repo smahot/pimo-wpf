@@ -47,26 +47,6 @@ weight = 2
 languageName = "English"
 
 [[Languages.fr.menu.shortcuts]]
-name = "<i class='fas fa-file-code'></i> Template"
-url = "/template"
-weight = 20
-
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-file-code'></i> Template"
-url = "/template"
-weight = 20
-
-[[Languages.fr.menu.shortcuts]] 
-name = "<i class='fas fa-tags'></i> Tags"
-url = "/tags"
-weight = 30
-
-[[Languages.en.menu.shortcuts]] 
-name = "<i class='fas fa-tags'></i> Tags"
-url = "/tags"
-weight = 30
-
-[[Languages.fr.menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Code source"
 url = "https://github.com/smahot/pimo-wpf"
 weight = 50
