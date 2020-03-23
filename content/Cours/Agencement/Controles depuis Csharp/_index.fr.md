@@ -5,23 +5,23 @@ pre = "<b>3.2 </b>"
 +++
 
 - [1. Quelques éléments du Chapitre 2](#1-quelques-éléments-du-chapitre-2)
-  - [a. Comme avant mais pas comme avant : le Bouton](#a-comme-avant-mais-pas-comme-avant--le-bouton)
-  - [b. Comme avant mais pas comme avant : le TextBlock](#b-comme-avant-mais-pas-comme-avant--le-textblock)
-  - [c. Comme avant mais pas comme avant : la TextBox](#c-comme-avant-mais-pas-comme-avant--la-textbox)
-  - [d. Comme avant mais pas comme avant : la CheckBox](#d-comme-avant-mais-pas-comme-avant--la-checkbox)
+  - [a. Le Bouton](#a-le-bouton)
+  - [b. Le TextBlock](#b-le-textblock)
+  - [c. La TextBox](#c-la-textbox)
+  - [d. La CheckBox](#d-la-checkbox)
 - [2. Quelques éléments du Chapitre 3](#2-quelques-éléments-du-chapitre-3)
-  - [a. Comme avant mais pas comme avant : La Grid](#a-comme-avant-mais-pas-comme-avant--la-grid)
-  - [b. Comme avant mais pas comme avant : le Stack Panel](#b-comme-avant-mais-pas-comme-avant--le-stack-panel)
-  - [c. Comme avant mais pas comme avant : le Wrap Panel](#c-comme-avant-mais-pas-comme-avant--le-wrap-panel)
-  - [d. Comme avant mais pas comme avant : le Dock Panel](#d-comme-avant-mais-pas-comme-avant--le-dock-panel)
-  - [e. Comme avant mais pas comme avant : Le Canvas](#e-comme-avant-mais-pas-comme-avant--le-canvas)
+  - [a. La Grid](#a-la-grid)
+  - [b. Le Stack Panel](#b-le-stack-panel)
+  - [c. Le Wrap Panel](#c-le-wrap-panel)
+  - [d. Le Dock Panel](#d-le-dock-panel)
+  - [e. Le Canvas](#e-le-canvas)
 - [3. Pourquoi utiliser la création dynamique ?](#3-pourquoi-utiliser-la-création-dynamique-)
 
 Nous allons maintenant aborder une nouvelle façon de créer tous les éléments que nous avons vu auparavant, depuis le bouton jusqu’aux différents layouts. En effet, tous ces éléments sont des objets C#, et nous pouvons donc les initialiser et spécifier leurs propriétés directement depuis la `MainWindow.xaml.cs`. Si au départ l’intérêt de cette approche semble inexistant, nous allons voir que se priver de la simplicité du XAML nous permettra d'aller beaucoup plus loin dans notre utilisation de WPF.
 
 ## 1. Quelques éléments du Chapitre 2
 
-### a. Comme avant mais pas comme avant : le Bouton
+### a. Le Bouton
 
 Tout ce que nous ferons maintenant concernera la fenêtre `MainWindow.xaml.cs`, et s’écrira donc en C#. Comme nous l’avons dit plus haut, il est possible de créer un bouton sans utiliser notre fenêtre XAML. Pour cela il suffit de déclarer un nouvel objet de la classe Button :
 
@@ -189,7 +189,7 @@ private void btn_esp(object sender, EventArgs ev)
 
 {{% /expand %}}
 
-### b. Comme avant mais pas comme avant : le TextBlock
+### b. Le TextBlock
 
 De la même façon, le TextBlock est un objet et se déclare comme on déclare un bouton :
 
@@ -344,7 +344,7 @@ private void b_Event(object sender, EventArgs e)
 
 {{% /expand %}}
 
-### c. Comme avant mais pas comme avant : la TextBox
+### c. La TextBox
 
 On déclare l’objet TextBox comme suit :
 
@@ -463,7 +463,7 @@ private void b_Event(object sender, EventArgs e)
 
 {{% /expand %}}
 
-### d. Comme avant mais pas comme avant : la CheckBox
+### d. La CheckBox
 
 On déclare l’objet CheckBox comme suit :
 
@@ -708,7 +708,7 @@ private void btn_send(object sender, EventArgs e)
 
 ## 2. Quelques éléments du Chapitre 3
 
-### a. Comme avant mais pas comme avant : La Grid
+### a. La Grid
 
 On déclare un Grid comme suit :
 
@@ -824,7 +824,7 @@ public MainWindow()
 
 {{% /expand %}}
 
-### b. Comme avant mais pas comme avant : le Stack Panel
+### b. Le Stack Panel
 
 Nous pouvons déclarer des layouts, qui sont eux aussi des objets C#. Pour construire un Stack Panel, il faut écrire la ligne suivante :
 
@@ -945,7 +945,7 @@ private void btn_healthy(object sender, EventArgs e)
 
 {{% /expand %}}
 
-### c. Comme avant mais pas comme avant : le Wrap Panel
+### c. Le Wrap Panel
 
 Nous pouvons créer un Wrap Panel comme suit :
 
@@ -1040,7 +1040,7 @@ public MainWindow()
 
 {{% /expand %}}
 
-### d. Comme avant mais pas comme avant : le Dock Panel
+### d. Le Dock Panel
 
 On peut déclarer un objet Dock Panel comme suit :
 
@@ -1137,7 +1137,7 @@ Essayez d’obtenir avec Dock Panel et en dynamique le résultat suivant :
 
 {{% /expand %}}
 
-### e. Comme avant mais pas comme avant : Le Canvas
+### e. Le Canvas
 
 On déclare un objet Canvas comme suit :
 
