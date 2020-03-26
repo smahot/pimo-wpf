@@ -61,10 +61,10 @@ Pour placer des éléments à l’intérieur de notre page, il existe deux possi
 1. *XAML* est un langage qui est utilisé dans le but de simplifier la disposition des éléments au sein de notre application.
     XAML utilise des balises (de la même manière que HTML) pour des applications Windows. On code alors directement notre XAML en bas de notre fenêtre Visual Studio pour faire apparaître les éléments.  
     Les éléments peuvent s’écrire de deux manières :
-     - Balises ouvrante/fermante (Ex : `<Button> </Button>`).  
-     - Balises uniques (Ex :`<Button/>`)
+     - Balises ouvrantes/fermantes (Ex : `<Button> </Button>`).  
+     - Balises uniques (ou auto-fermantes/oprhelines) (Ex :`<Button/>`)
 
-    On peut noter que les éléments peuvent s’imbriquer les uns les autres. On peut donc avoir une image à l’intérieur d’un bouton par exemple : `<Button <Image/> />`.
+    On peut noter que les éléments peuvent s’imbriquer les uns aux autres. On peut donc avoir une image à l’intérieur d’un bouton par exemple : `<Button <Image/> />`.
 
 2. La boîte à outils située à gauche permet une approche simplifiée et plus intuitive pour la création d’éléments.
     Il suffit de glisser ce que l’on veut dans notre fenêtre. Notez que ce drag and drop implique une création de code automatique dans le fichier XAML.

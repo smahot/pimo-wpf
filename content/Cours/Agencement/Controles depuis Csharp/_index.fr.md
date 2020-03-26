@@ -199,7 +199,7 @@ Pour attribuer un texte au TextBlock, il suffit de donner une valeur à sa propr
 
     txtbl.Text = "TextBlock créée sans XAML";
 
-Evidemment, on peut aussi attribuer une taille au TextBlock (comme pour tous les autres éléments, mais, l’exemple étant été donné pour le bouton, nous ne nous y arrêterons plus). Arrêtons-nous maintenant sur les propriétés du texte.
+Evidemment, on peut aussi attribuer une taille au TextBlock (comme pour tous les autres éléments, mais, l’exemple ayant été donné pour le bouton, nous ne nous y arrêterons plus). Arrêtons-nous maintenant sur les propriétés du texte.
 
 Nous pouvons spécifier la police de texte que nous voulons utiliser comme suit :
 
@@ -1251,7 +1251,7 @@ Créez un nouveau projet WPF et entrez le code suivant dans la fenêtre XAML, en
 ```
 
 Comme vous pouvez le voir, nous venons de créer une grille qui a trois lignes et trois colonnes de mêmes dimensions.
-Nous donnons le nom grid1 à notre grille, ce qui aura,nous le verrons, une importance par la suite. A noter que la propriété suivante permettra d’afficher les lignes et colonnes de notre grille :
+Nous donnons le nom grid1 à notre grille, ce qui aura, nous le verrons, une importance par la suite. A noter que la propriété suivante permettra d’afficher les lignes et colonnes de notre grille :
 
     myGrid.ShowGridLines = true;
 

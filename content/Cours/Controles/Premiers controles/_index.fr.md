@@ -30,7 +30,7 @@ Comme vous pouvez le voir, nous venons de créer une instance de la classe bouto
 
 - **Les attributs affectant la forme du bouton :**
 
-**Content** : Ce qu’il y a marqué dans la case du bouton. Ne prend que des *chars* ou *string*.
+**Content** : Ce qu’il y a marqué dans la case du bouton. Ne prend que des *chars* ou *strings*.
 
 {{% exercice %}}
 Pour essayer, remplacez ‘’Button’’ par ‘’hello !’’ – le texte du bouton change dans la fenêtre !
@@ -66,7 +66,7 @@ Changez les valeurs de ces deux atributs : par exemple, mettez 200 et 200 – 
 
 Tout d’abord, si l’on omet les layouts, les éléments sont placés dans la fenêtre grâce à 3 attributs : Margin, HorizontalAlignement et VerticalAlignement. Considérez que chaque contrôle est placé dans la fenêtre par rapport à un point absolu, un 0,0 que vous définissez, puis donc vous donnez les coordonnées avec Margin.
 
-**HorizontalAlignement** défini l’abscisse de ce point absolu. ‘’left’’ signifie que l’origine se place à gauche, ‘’center’’ au centre et ‘’right’’ à droite (exemple : une fenêtre de 100px de largeur – left signifierai 0px, center 50px et right 100px).
+**HorizontalAlignement** définie l’abscisse de ce point absolu. ‘’left’’ signifie que l’origine se place à gauche, ‘’center’’ au centre et ‘’right’’ à droite (exemple : une fenêtre de 100px de largeur – left signifierait 0px, center 50px et right 100px).
 
 **VerticalAlignement** : pareil que *HorizontalAlignement*, mais pour les ordonnées. Les valeurs sont cette fois ci ‘’Top’’, ‘’Center’’ et ‘’Bottom’’.
 
@@ -84,7 +84,7 @@ Pour cet exemple, mettez la valeur de Margin à 0, et testez différentes config
 
 {{%/expand%}}
 
-**Margin** : donne les coordonnées par rapport à ce point absolu. Il donne la ‘’marge’’, c’est-à-dire la distance en pixel du contrôle par rapport au point d’origine quand il n’est pas dans un layouts (que vous verrez plus tard). Les 4 marges sont définies, ainsi ‘’10,5,0,15’’ signifie une marge à gauche de 10px, une marge en haut de 5px, une marge à droite de 0px et une marge en bas de 15px. Il existe deux manières de définir la marge : soit en ne déclarant juste un nombre (exemple : Margin=’’10’’) où chaque marge fera donc 10px, ou en déclarant les 4 marges séparément.
+**Margin** : donne les coordonnées par rapport à ce point absolu. Il donne la "marge", c’est-à-dire la distance en pixel du contrôle par rapport au point d’origine quand il n’est pas dans un layouts (que vous verrez plus tard). Les 4 marges sont définies, ainsi "10,5,0,15" signifie une marge à gauche de 10px, une marge en haut de 5px, une marge à droite de 0px et une marge en bas de 15px. Il existe deux manières de définir la marge : soit en déclarant juste un nombre (exemple : Margin="10") où chaque marge fera donc 10px, ou en déclarant les 4 marges séparément (exemple : Margin = "10,20,30,40", soit 10px à gauche, 20 en haut, 30 à droite et 40 en bas).
 
 {{% exercice %}}
 Placez d’autres boutons à différents endroits et faites varier les marges pour en voir les différents effets.
@@ -105,6 +105,8 @@ Placez d’autres boutons à différents endroits et faites varier les marges po
 ---
 
 A noter que vous verrez dans le chapitre suivant une meilleure façon placer les éléments de la fenêtre avec les layouts.
+Pour vous aider à comprendre, voilà une vidéo qui explique en détails comment fonctionne le placement d'un objet dans une grid :
+
 
 - **D’autres attributs que vous pouvez rajouter :**
 
@@ -113,7 +115,8 @@ A noter que vous verrez dans le chapitre suivant une meilleure façon placer les
 *FontWeight* : l’épaisseur du texte (l’IDE propose plusieurs épaisseurs prédéterminées comme black, bold…)  
 *Foreground* : la couleur de la police  
 *BorderBrush* : la couleur des bords  
-*BorderThickness* : l’épaisseur de la bordure  
+*BorderThickness* : l’épaisseur de la bordure
+*Background* : la couleur du fond  
 
 ![image3](/img/2.1/im3.png?height=300px)
 
@@ -152,7 +155,7 @@ Les attributs que l’on utilise aussi ici sont :
 ![image5](/img/2.1/im5.png?height=300px)
 
 {{% exercice %}}
-En exemple, créez un TextBlock avec une phrase assez longue dedans, qui revient à la ligne, au centre de la fenêtre. Le texte doit être en bleu. Choisissez la taille de police de votre choix.
+En exemple, créez un TextBlock avec une phrase assez longue dedans, qui revient à la ligne, au centre de la fenêtre. Le texte doit être en bleu. Choisissez la taille de police que vous voulez.
 {{% /exercice %}}
 
 {{% expand "Correction" %}}

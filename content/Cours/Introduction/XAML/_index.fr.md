@@ -65,7 +65,7 @@ Modifiez la fenêtre en jouant sur Height et Width : essayez d’obtenir une fe
 300 par 400 :
 ![image3](/img/1.2/im3.png?height=300px)
 
-800 par 400… Ca rentre à peine dans la fenêtre de visualisation !
+800 par 400… Cela rentre à peine dans la fenêtre de visualisation !
 ![image4](/img/1.2/im4.png?height=300px)
 
 {{% expand "Correction" %}}
@@ -79,7 +79,7 @@ Title="MainWindow" Height="800" Width="400">
 
 {{% /expand %}}
 
-Là où ça devient vraiment intéressant pour nous, ce sont les balises grid. Window, c’est en quelques sorte le « contour » de la fenêtre. Grid est ce qu’il y a à l’intérieur de la fenêtre. Pour les exemples qui suivront, et quand vous aurez à ajouter quelque chose dans la fenêtre, ce sera entre ces balises grid qu’il faudra ajouter votre code.
+Là où cela devient vraiment intéressant pour nous, ce sont les balises grid. Window, c’est en quelques sorte le « contour » de la fenêtre. Grid est ce qu’il y a à l’intérieur de la fenêtre (Il s'agit d'un layout que vous pouvez remplacer). Pour les exemples qui suivront, et quand vous aurez à ajouter quelque chose dans la fenêtre, ce sera entre ces balises grid qu’il faudra ajouter votre code.
 
 Drag’n’droppez un bouton de la Toolbox sur la fenêtre blanche. Tadaaah ! Quelque chose est apparue entre les balises grid : une balise Button !
 
@@ -96,3 +96,7 @@ Autre chose : de la même façon qu’XML, vous pouvez mettre des commentaires.
 ![image6](/img/1.2/im6.png?height=300px)
 
 Dans cet exemple, deux boutons sont définis, mais seul 1 apparaît. Si vous regardez bien le code, vous verrez qu’un des deux boutons est en vert, est commenté car entre < !-- et -->.
+
+Voilà cette brève présentation de XAML et Visual Studio terminée. Le chapitre qui suit va vous apprendre à placer les contrôles (boutons et autres objets) dans cette fenêtre ainsi qu'à leur attribuer des propriétés appelées événements.
+
+---

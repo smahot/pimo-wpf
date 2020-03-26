@@ -35,7 +35,7 @@ Une fois que la grille a été créée, il faut définir le nombre de lignes et 
 </Grid>
 ```
 
-Dans cet exemple, nous définissons une grille de 3 lignes et 3 colonnes. Les attributs Width et Height permettent de déterminer la taille de la cellule. Le caractère `*` sert à obtenir des cellules de dimensions proportionnelle. Ainsi, la première colonne, de dimension 2* sera 2 fois plus grandes que les colonnes 2 et 3 de taille 1* (dont on peut simplifier l’écriture dans notre code en la notant `*`). Par défaut, les lignes et colonnes seront étendues sur toute la fenêtre XAML. On peut aussi donner un nombre précis de pixel que l’élément occupera :
+Dans cet exemple, nous définissons une grille de 3 lignes et 3 colonnes. Les attributs Width et Height permettent de déterminer la taille de la cellule. Le caractère `*` sert à obtenir des cellules de dimensions proportionnelle. Ainsi, la première colonne, de dimension 2* sera 2 fois plus grande que les colonnes 2 et 3 de taille 1* (dont on peut simplifier l’écriture dans notre code en la notant `*`). Par défaut, les lignes et colonnes seront étendues sur toute la fenêtre XAML. On peut aussi donner un nombre précis de pixel que l’élément occupera :
 
 ```xml
 <ColumnDefinition Width="100"/>

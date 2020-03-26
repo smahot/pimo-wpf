@@ -1,10 +1,10 @@
 +++
-title = "Les évènements"
+title = "Les événements"
 weight = 2002
 pre = "<b>2.2 </b>"
 +++
 
-- [a. Comment affecter un evenement a un objet](#a-comment-affecter-un-evenement-a-un-objet)
+- [a. Comment affecter un événement à un objet](#a-comment-affecter-un-evenement-a-un-objet)
 - [b. Liste des événements](#b-liste-des-événements)
 - [c. Les événements routés](#c-les-événements-routés)
   - [Direct Event](#direct-event)
@@ -31,7 +31,12 @@ Pour affecter un évènement à un objet :
 
 - A vous de remplir cette méthode en fonction de ce que vous attendez de l’évènement. Cette fonction sera exécutée lorsque l’évènement se sera activé. On peut par exemple demander l’affichage d’un message lorsque le bouton est cliqué :
 
-![image4](/img/2.2/img04.png?height=100px)
+```xml
+private void Button_Click(object sender, RoutedEventargs e)
+{
+   MessageBox.Show("Hello World!");
+}
+```
 
 ## b. Liste des événements
 
@@ -71,6 +76,55 @@ Il existe trois types d’événements routés :
 Les événements directs sont des événements qui sont seulement activés par l’élément dans lequel l’événement est implémenté. L’évènement n’est pas propagé.
 
 Par exemple, l’événement que nous avons créé un peu plus haut est un événement direct.
+
+{{% exercice %}}
+Créez un bouton avec un événement direct : lorsque l’on clique sur ce bouton, une boite de texte s’ouvre avec « First Event » écrit dedans.
+{{% /exercice %}}
+
+![imageex1](/img/2.2/imgExemple1.png?height=300px)
+
+{{% expand "Correction XAML" %}}
+
+```xml
+    <Button x:Name="bouton_cible" Content="Button" HorizontalAlignment="Left" Height="105" Margin="302,150,0,0" VerticalAlignment="Top" Width="189" MouseEnter="Button_Click"/>
+```
+
+{{%/expand%}}
+
+{{% expand "Correction C#" %}}
+
+```xml
+    private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("First Event !");
+        }
+```
+
+{{%/expand%}}
+
+
+{{% exercice %}}
+Toujours sur ce même bouton, rajoutez un événement lorsque la souris passe sur le bouton, le bouton change de couleur.
+{{% /exercice %}}
+
+{{% expand "Correction XAML" %}}
+
+```xml
+    <Button x:Name="bouton_cible" Content="Button" HorizontalAlignment="Left" Height="105" Margin="302,150,0,0" VerticalAlignment="Top" Width="189" MouseEnter="mouse_color1"/>
+```
+
+{{%/expand%}}
+
+{{% expand "Correction C#" %}}
+
+```xml
+    private void mouse_color1(object sender, MouseEventArgs e)
+        {
+            bouton_cible.Background = Brushes.Blue;
+        }
+```
+
+{{%/expand%}}
 
 ### Bubbling Event
 
@@ -120,6 +174,67 @@ Cliquez sur le rectangle. Que se passe-t-il ?
 
 Encore une fois, l’événement remonte l’arbre et active tous les événement MouseDown de l’élément source jusqu’à la racine..
 
+{{% exercice %}}
+Testons immédiatement : refaite l’exercice du dessus avec le schéma suivant : 
+-grid
+	-grid
+		-grid
+			-button
+Chaque event va afficher grid 1, grid 2, grid 3, button…
+
+{{% /exercice %}}
+
+![imageex1](/img/2.2/imgExemple2.png?height=300px)
+
+{{% expand "Correction XAML" %}}
+
+```xml
+    <Grid MouseDown="Grid1_mouseDown">
+        <Grid HorizontalAlignment="Left" Height="280" Margin="98,67,0,0" VerticalAlignment="Top" Width="623" Background="LightBlue" MouseDown="grid2_MouseDown">
+            <Grid HorizontalAlignment="Left" Height="175" Margin="53,54,0,0" VerticalAlignment="Top" Width="527" Background="LightGray" MouseDown="grid3_MouseDown">
+                <Button Content="Button" HorizontalAlignment="Left" Height="82" Margin="77,47,0,0" VerticalAlignment="Top" Width="360" Background="Gray" MouseDown="button_MouseDown"/>
+            </Grid>
+        </Grid>
+    </Grid>
+```
+
+{{%/expand%}}
+
+{{% expand "Correction C#" %}}
+
+```xml
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Grid1_mouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Grid 1");
+        }
+
+        private void grid2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Grid 2");
+        }
+
+        private void grid3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Grid 3");
+        }
+
+        private void button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Bouton");
+        }
+    }
+
+```
+
+{{%/expand%}}
+
 ### Tunnel Events
 
 Les événements tunnels sont les opposés des événements bulle. En effet, l’événement est d’abord traité à la racine de l’arbre, puis successivement par chaque niveau de conteneur (dans le sens descendant) jusqu’à atteindre l’élément source.
@@ -136,12 +251,12 @@ Si vous cliquez sur le rectangle, vous verrez que l’ordre d’apparition des m
 ![image13-15](/img/2.2/img13-15.png?height=200px)
 
 {{% notice tip %}}
-Il est possible d’empecher la propagation d’un évènement !
+Il est possible d’empêcher la propagation d’un évènement !
 {{% /notice %}}
 
 Reprenons l’exemple des événements bulles. Il est possible d’empêcher un évènement de se propager au-delà d’un certain élément.
 
-Pour ce faire, il suffit d’ajouter "e.Handled=true” dans la fonction de l’évènement au niveau où l’on souhaite quela propagation s’arrête.
+Pour ce faire, il suffit d’ajouter "e.Handled=true” dans la fonction de l’événement au niveau où l’on souhaite que la propagation s’arrête.
 
 ![image16](/img/2.2/img16.png?height=100px)
 
