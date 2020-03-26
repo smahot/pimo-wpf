@@ -7,7 +7,7 @@ pre = "<b>1.3 </b>"
 - [Introduction aux classes : Héritage et contrôles](#introduction-aux-classes--héritage-et-contrôles)
 - [MVVM : Balises XAML et Classes partielles en code-behind](#mvvm--balises-xaml-et-classes-partielles-en-code-behind)
 - [Classes personnalisées](#classes-personnalisées)
-- [Créer des objets avec WPF : XAML et C](#créer-des-objets-avec-wpf--xaml-et-c)
+- [Créer des objets avec WPF : XAML et Csharp](#créer-des-objets-avec-wpf--xaml-et-csharp)
 
 ## Introduction aux classes : Héritage et contrôles
 
@@ -41,7 +41,7 @@ XAML implémenté dans les infrastructures CLR prend en charge la possibilité d
 - Votre classe personnalisée doit être publique et prendre en charge un constructeur public (sans paramètre).
 - Votre classe personnalisée ne doit pas être une classe imbriquée. Les classes imbriquées et le « point », dans leur syntaxe générale d’utilisation du CLR, interfèrent avec d’autres fonctionnalités WPF et/ou XAML.
 
-**Note :**
+**Notes :**
 
 - Écriture et attribution d’un convertisseur de type :
 
@@ -51,9 +51,9 @@ Vous devrez parfois écrire une classe dérivée TypeConverter personnalisée po
 
 Pour être utilisable comme un événement CLR, l’événement doit être exposé comme un événement public sur une classe qui prend en charge un constructeur sans paramètre, ou sur une classe abstraite où l’événement est accessible sur les classes dérivées.
 
-## Créer des objets avec WPF : XAML et C#
+## Créer des objets avec WPF : XAML et Csharp
 
-Commençons avec une application WPF, lancée sur Visual Studio, qu’on nommera `WpfApplication1`. Deux fichiers sont automatiquement générés par l’IDE : `MainWindow.xaml` et `MainWindow.xaml.cs`. Créons une classe personnalisée publique dans le fichier code-behind, soit notre fichier `.cs`. Plaçons-la en dessous de la classe principale `MainWindow`, dans le namespace `WpfApplication1`. Nous l’appellerons `MyClass` :
+Commençons avec une application WPF, lancée sur Visual Studio, qu’on nommera `WpfApplication1`. Deux fichiers sont automatiquement générés par l’IDE : `MainWindow.xaml` et `MainWindow.xaml.cs`. Créons une classe personnalisée publique dans le fichier code-behind de type `.cs`. Plaçons la en dessous de la classe principale `MainWindow`, dans le namespace `WpfApplication1`. Nous l’appellerons `MyClass` :
 
 ```csharp
 public class MyClass
@@ -64,14 +64,17 @@ public class MyClass
 }
 ```
 
-Il faut ensuite trouver un moyen d’accéder à la définition de notre nouvelle classe depuis le document `MainWindow.xaml`, en important le namespace de la classe dans le code XAML. Il est possible d’importer le namespace de n’importe quelle assembly et d’utiliser ce dernier pour indiquer à quelle classe on fait référence. Nous utiliserons la ligne suivante, déjà présente dès le départ :  xmlns :local=’’clr-namespace :WpfApplication1’’
+Il faut ensuite trouver un moyen d’accéder à la définition de notre nouvelle classe depuis le document `MainWindow.xaml`, en important le namespace de la classe dans le code XAML. Il est possible d’importer le namespace de n’importe quelle assembly et d’utiliser ce dernier pour indiquer à quelle classe on fait référence. Nous utiliserons la ligne suivante, déjà présente dès le départ, mise en évidence en bleu ci-dessous :
 
-L’étape suivante consiste à se débarrasser du champ `<Grid> </Grid>`, puisqu’il est impossible d’imbriquer une classe générale dans un Grid, qui a besoin d’une classe affichable. On les remplacera par : `<local :MyClass> </local :MyClass>`, qui nous permet d’utiliser le namespace désigné par `local` et d’y trouver `MyClass`. Vous risquez d’avoir un message d’erreur à ce moment-ci indiquant que MyClass n’est pas trouvable ou définie ; il suffit de run, d’arrêter, et vous n’aurez plus d’erreur.
+![image2](/img/1.3/img02.png?height=200px)
+
+
+L’étape suivante consiste à se débarrasser du champ `<Grid> </Grid>`, puisqu’il est impossible d’imbriquer une classe générale dans un Grid, qui a besoin d’une classe affichable. On les remplacera par : `<local:MyClass> </local:MyClass>`, qui nous permet d’utiliser le namespace désigné par `local` et d’y trouver `MyClass`. Vous risquez d’avoir un message d’erreur à ce moment-ci indiquant que MyClass n’est pas trouvable ou définie ; il suffit de run, d’arrêter, et vous n’aurez plus d’erreur.
 
 Généralement, les composants WPF sont nommés à l’aide de la propriété NAME, mais il existe un mécanisme plus direct pour les classes personnalisées : Utiliser les propriétés offertes par la namespace XAML `x`. L’attribut `x:Name` est employable pour attribuer le nom utilisé par XAML pour créer l’instance, désignée par le nom `MyObject1` :
 
 ```xml
-<local:MyClass x:Name=’’MyObject1’’> </local:MyClass>
+<local:MyClass x:Name="MyObject1"> </local:MyClass>
 ```
 
 Si vous souhaitez vérifier, ajoutez un breakpoint juste après la ligne `InitializeComponent()` dans la classe `MainWindow`, utilisez le débogueur et observez que `MyObject1` a bien été instancié.
@@ -87,13 +90,13 @@ public int MyProperty
 }
 ```
 
-On peut ensuite y attribuer, par exemple, la valeur « 20 » dans le XAML. Il est possible de rencontrer le même problème d’erreur qu’avec `MyClass` ; idem, il faut run et arrêter.
+On peut ensuite y attribuer, par exemple, la valeur « 20 » dans le XAML. En cas d'erreur, n'hésitez pas à run puis à arrêter.
 
 ```xml
-<local:MyClass x :Name=’’MyObject1’’ local:MyProperty=”20”> </local:MyClass>
+<local:MyClass x :Name="MyObject1" local:MyProperty="20"> </local:MyClass>
 ```
 
-Un problème peut subvenir lorsque l’on souhaite initialiser une propriété qui prend un type de référence, tel que les types classe, délégué, tableau ou interface. Il faut donc écrire sa propre classe dérivée `TypeConverter` personnalisée, qui fournira une conversion de type pour ce type de propriété. Créons donc, dans le même fichier `.cs`, une deuxième classe `MyDataClass`, similaire à notre première classe.
+Un problème peut subvenir lorsque l’on souhaite initialiser une propriété qui prend un type de référence, tel que les types classe, délégué, tableau ou interface. Il faut donc écrire sa propre classe dérivée `TypeConverter`, qui fournira une conversion de type pour ce type de propriété. Créons tout d'abord, dans le même fichier `.cs`, une deuxième classe `MyDataClass` similaire à notre première classe.
 
 ```csharp
 public class MyDataClass
@@ -122,7 +125,7 @@ public MyDataClass MyClassProperty
 }
 ```
 
-Il faut maintenant pouvoir initialiser, directement depuis le XAML, notre propriété `MyProperty2`. Nous allons donc implémenter un convertisseur de type personnalisé. Premièrement, ajoutons la ligne  `[TypeConverter(typeof(MyDataClassTypeConverter))]` juste au-dessus de votre classe `MyDataClass` :
+Il faut maintenant pouvoir initialiser, directement depuis le XAML, notre propriété `MyClassProperty`. Nous allons donc implémenter un convertisseur de type personnalisé. Premièrement, ajoutons la ligne  `[TypeConverter(typeof(MyDataClassTypeConverter))]` juste au-dessus de votre classe `MyDataClass` :
 
 ```csharp
 [TypeConverter(typeof(MyDataClassTypeConverter))]
@@ -130,7 +133,7 @@ public class MyDataClass
 { ...
 ```
 
-Il faut maintenant créer la classe `MyDataClassTypeConverter`. Pour ce faire, ajoutons, en première ligne du programme décrivant notre classe, la ligne :
+Il faut maintenant créer la classe `MyDataClassTypeConverter`. Ajoutons en début de code, dans la liste des `using`, la ligne :
 
 ```csharp
 using System.ComponentModel;
@@ -149,7 +152,7 @@ public class MyDataClassTypeConverter : TypeConverter
 }
 ```
 
-Comme vous pouvez le constater, le convertisseur de type doit hériter de `TypeConverter`, souligné en rouge sur l’exemple ci-dessus, et implémente tout d’abord `CanConvertFrom` qui renvoie `True` ou `False`, si le convertisseur de type parvient, ou non, à effectuer la conversion demandée. La classe n’est pas encore entièrement définie, puisque c’est la seconde méthode dont nous avons besoin qui fait la conversion :
+Comme vous pouvez le constater, le convertisseur de type doit hériter de `TypeConverter`, et implémente tout d’abord `CanConvertFrom` qui renvoie `True` ou `False`, si le convertisseur de type parvient, ou non, à effectuer la conversion demandée. La classe n’est pas encore entièrement définie, puisque c’est la seconde méthode dont nous avons besoin qui fait la conversion :
 
 ```csharp
 public class MyDataClassTypeConverter : TypeConverter
@@ -173,7 +176,7 @@ public class MyDataClassTypeConverter : TypeConverter
 Cette définition correspond à celle d’un convertisseur de type String en nombre entier 32 bits. Voici donc une mise en pratique simple vous détaillant les bases de la création d’un objet personnalisé. Il suffit maintenant de compléter votre code XAML :
 
 ```xml
-<local:MyClass x :Name=’’MyObject1’’ local:MyProperty=”20” local:MyClassProperty=”35”>
+<local:MyClass x:Name="MyObject1" local:MyProperty="20" local:MyClassProperty="35">
 </local:MyClass>
 ```
 
