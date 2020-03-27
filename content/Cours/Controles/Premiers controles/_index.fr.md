@@ -4,8 +4,8 @@ weight = 2001
 pre = "<b>2.1 </b>"
 +++
 
-- [a. Création d’un bouton](#a-cr%c3%a9ation-dun-bouton)
-- [b. Les autres contrôles](#b-les-autres-contr%c3%b4les)
+- [a. Création d’un bouton](#a-création-dun-bouton)
+- [b. Les autres contrôles](#b-les-autres-contrôles)
 
 #### a. Création d’un bouton
 
@@ -107,6 +107,7 @@ Placez d’autres boutons à différents endroits et faites varier les marges po
 A noter que vous verrez dans le chapitre suivant une meilleure façon placer les éléments de la fenêtre avec les layouts.
 Pour vous aider à comprendre, voilà une vidéo qui explique en détails comment fonctionne le placement d'un objet dans une grid :
 
+{{< youtube-hw W3sxLAXkbS0 640 360>}}
 
 - **D’autres attributs que vous pouvez rajouter :**
 
