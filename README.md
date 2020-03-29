@@ -44,6 +44,8 @@ cd Desktop
 wget https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_0.68.3_Windows-64bit.zip
 ```
 
+Ou lancez votre [navigateur préféré](https://www.mozilla.org/fr/firefox/new/) et allez sur le lien [suivant](https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_0.68.3_Windows-64bit.zip), puis enregistrez le sur votre bureau.
+
 - Décompresser l'archive dans un dossier appelé hugo:
 
 Avec [7-zip](https://www.7-zip.fr/download.html) :
@@ -58,7 +60,7 @@ Avec Powershell :
 Expand-Archive "hugo_*_Windows-64bit.zip" "hugo"
 ```
 
-- Déplacer le dossier `hugo` dans le dossier `Documents`par exemple :
+- Déplacer le dossier `hugo` dans le dossier `Documents` par exemple :
 
 ```bash
 move hugo %userprofile%\Documents
