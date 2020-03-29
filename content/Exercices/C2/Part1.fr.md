@@ -6,15 +6,15 @@ pre = "<b>2.1 </b>"
 
 ## 2.1 Les premiers contrôles <!-- omit in toc -->
 
-- [Exercice 1](#exercice-1)
-- [Exercice 2](#exercice-2)
-- [Exercice 3](#exercice-3)
-- [Exercice 4](#exercice-4)
-- [Exercice 5](#exercice-5)
-- [Exercice 6](#exercice-6)
-- [Exercice 7](#exercice-7)
+- [Exercice 1 : Les 4 petits boutons](#exercice-1)
+- [Exercice 2 : 4 boutons centrés](#exercice-2)
+- [Exercice 3 : Alignement de boutons](#exercice-3)
+- [Exercice 4 : Double textblock](#exercice-4)
+- [Exercice 5 : Placer deux contrôles différents](#exercice-5)
+- [Exercice 6 : La Checkbox](#exercice-6)
+- [Exercice 7 : Liste de musique](#exercice-7)
 
-### Exercice 1
+### Exercice 1 : Les 4 petits boutons
 
 {{% exercice %}}
 Créez 4 boutons, chacun dans un angle, avec une couleur de police différent à chaque fois.
@@ -47,7 +47,7 @@ Créez 4 boutons, chacun dans un angle, avec une couleur de police différent à
 
 {{%/expand%}}
 
-### Exercice 2
+### Exercice 2 : 4 boutons centrés
 
 {{% exercice %}}
 Placez 4 boutons de 40*40 au centre, sans qu’ils ne superposent. Jouez sur les marges pour obtenir le résultat.
@@ -89,7 +89,7 @@ Placez 4 boutons de 40*40 au centre, sans qu’ils ne superposent. Jouez sur les
 
 {{%/expand%}}
 
-### Exercice 3
+### Exercice 3 : Alignement de boutons
 
 {{% exercice %}}
 Alignez 4 boutons de 40*40 sur une ligne horizontale au centre de la fenêtre.
@@ -119,7 +119,7 @@ Alignez 4 boutons de 40*40 sur une ligne horizontale au centre de la fenêtre.
 
 {{%/expand%}}
 
-### Exercice 4
+### Exercice 4 : Double textblock
 
 {{% exercice %}}
 Créez deux TextBlocks centrés dans la fenêtre avec un texte dans chacun qui revient à la ligne.
@@ -143,7 +143,7 @@ Créez deux TextBlocks centrés dans la fenêtre avec un texte dans chacun qui r
 
 {{%/expand%}}
 
-### Exercice 5
+### Exercice 5 : Placer deux contrôles différents
 
 {{% exercice %}}
 Créez 1 TextBox qui prend la moitié gauche de la fenêtre. Placez un bouton de 50*50 au centre de l’autre moitié de fenêtre.
@@ -162,10 +162,10 @@ Créez 1 TextBox qui prend la moitié gauche de la fenêtre. Placez un bouton de
 
 {{%/expand%}}
 
-### Exercice 6
+### Exercice 6 : Checkbox
 
 {{% exercice %}}
-Créez un CheckBox dans le coin en haut à droite avec le texte en bleu et avec trois états.
+Créez un CheckBox dans le coin en haut à gauche avec le texte en bleu et avec trois états.
 {{% /exercice %}}
 ![image6](/img/2.1/exos/im6.png?height=300px)
 
@@ -179,7 +179,7 @@ Créez un CheckBox dans le coin en haut à droite avec le texte en bleu et avec 
 
 {{%/expand%}}
 
-### Exercice 7
+### Exercice 7 : Liste de musique
 
 {{% exercice %}}
 Créez une ListBox contenant le nom d’au moins 7 musiques. Vous donnerez un gradient de couleur pour signifier votre ordre de préférence, en utilisant les couleurs en hexadécimale.

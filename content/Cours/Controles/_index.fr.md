@@ -5,6 +5,6 @@ chapter = true
 pre = "<b>2. </b>"
 +++
 
-# Liste des chapitres
+# Les contrôles
 
 {{% children %}}

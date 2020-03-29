@@ -5,6 +5,6 @@ chapter = true
 pre = "<b>1. </b>"
 +++
 
-# Liste des chapitres
+# Bienvenue sur WPF !
 
 {{% children %}}

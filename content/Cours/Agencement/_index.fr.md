@@ -5,6 +5,6 @@ chapter = true
 pre = "<b>3. </b>"
 +++
 
-# Liste des chapitres
+# L'agencement dans la fenêtre
 
 {{% children %}}

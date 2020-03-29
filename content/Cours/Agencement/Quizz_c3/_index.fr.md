@@ -251,3 +251,76 @@ d)
 {{%/expand%}}
 
 ---
+
+{{% exercice "Quizz" %}}
+**Question 11 :** Comment déclarer dynamiquement un bouton ? 
+{{% /exercice %}}
+
+a) ```Button = <Button Content=b Height=”100” Width=”100”/>```    
+b) ```Button b = new Button();```   
+c) ```Button b = new <Button Content=b Height=”100” Width=”100”/>``` 
+
+{{% expand "solution" %}}
+**Réponse :** b) Il s’agit de la même déclaration d’objet que les autres classes. Les balises sont à utiliser exclusivement dans la fenêtre XAML.
+{{%/expand%}}
+
+---
+
+{{% exercice "Quizz" %}}
+**Question 12 :** Une fois un contrôle déclaré, comment définir ses attributs ? (On vient de déclarer un bouton b) 
+{{% /exercice %}}
+
+a) ```b.Attribut = ”example”```    
+b) ```button(b).Attribut = ”example”```   
+c) ```b.button.Attribut = ”example”``` 
+
+{{% expand "solution" %}}
+**Réponse :** a) Encore une fois, il s’agit juste d’une classe C#, donc elle va agir de la même façon. Pas besoin de passer par une autre manière de déclarer les attributs. A noter que si certains attributs ne sont pas précisés, alors ils prendront des valeurs par défauts. 
+{{%/expand%}}
+
+---
+
+{{% exercice "Quizz" %}}
+**Question 13 :** Dans quelles situationS devrait-on forcément privilégier la création dynamique de contrôle par rapport à la déclaration statique en XAML ?
+{{% /exercice %}}
+
+a)	Un jeu de carte avec un nombre aléatoire de carte en main au début  
+b)	Une calculatrice  
+c)	La gestion d’un menu avec ajout de recette possible  
+d)	Rentrer un mot de passe
+
+{{% expand "solution" %}}
+**Réponse :** a) et c) Tout d’abord, tous ces exemples pourraient être créer avec C#. La question est bien : qu’est ce qui ne peut pas fonctionner correctement avec seulement XAML (sans compter les événements). Dans ce cas, on a bien le jeu de carte, car on ne pas rajouter ou retirer de « cartes » avec XAML et la gestion de menu, car encore une fois, impossible de rajouter une case recette avec XAML. Une calculatrice par contre, a juste besoin d’un nombre fini de bouton et d’un textblock. Pareil pour rentrer un mot de passe.
+{{%/expand%}}
+
+---
+
+{{% exercice "Quizz" %}}
+**Question 14 :** On se place dans une grid Grid avec 3 colonnes et 3 lignes. Comment placer un textblock txt dans la 2 ligne et 2 colonne ? 
+{{% /exercice %}}
+
+a)	Txt.SetColumn(1) ; Txt.SetRow(1) ;  
+b)	Txt.Grid(1,1) ;  
+c)	Grid.SetColumn(txt, 1) ; Grid.SetRow(txt,1);  
+d)	Txt.Grid.Row = 1; Txt.Grid.Column = 1;
+
+{{% expand "solution" %}}
+**Réponse :** c) On se place du point de vue du Layout dans ce cas.
+{{%/expand%}}
+
+---
+
+{{% exercice "Quizz" %}}
+**Question 15 :** Comment préciser une position dans un doc panel ? Le dockpanel s’appelle DP, et le bouton que l’on veut placer s’appelle b.
+{{% /exercice %}}
+
+a)	b.DP.right ;  
+b)	DP.SetDock(b, Right) ;  
+c)	b.SetDock(DP,Right) ;  
+d)	DP.SetDock(b,Dock.Right);
+
+{{% expand "solution" %}}
+**Réponse :** d) Encore une fois, on se place du point de vue du Layout. Ne pas oublier que l’on doit préciser Dock.POSITION sinon C# ne sait pas à quoi on fait référence.
+{{%/expand%}}
+
+---
