@@ -68,7 +68,6 @@ Il faut ensuite trouver un moyen d’accéder à la définition de notre nouvell
 
 ![image2](/img/1.3/img02.png?height=200px)
 
-
 L’étape suivante consiste à se débarrasser du champ `<Grid> </Grid>`, puisqu’il est impossible d’imbriquer une classe générale dans un Grid, qui a besoin d’une classe affichable. On les remplacera par : `<local:MyClass> </local:MyClass>`, qui nous permet d’utiliser le namespace désigné par `local` et d’y trouver `MyClass`. Vous risquez d’avoir un message d’erreur à ce moment-ci indiquant que MyClass n’est pas trouvable ou définie ; il suffit de run, d’arrêter, et vous n’aurez plus d’erreur.
 
 Généralement, les composants WPF sont nommés à l’aide de la propriété NAME, mais il existe un mécanisme plus direct pour les classes personnalisées : Utiliser les propriétés offertes par la namespace XAML `x`. L’attribut `x:Name` est employable pour attribuer le nom utilisé par XAML pour créer l’instance, désignée par le nom `MyObject1` :

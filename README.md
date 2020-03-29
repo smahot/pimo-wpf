@@ -5,6 +5,7 @@
 - [Introduction](#introduction)
 - [Construire le projet](#construire-le-projet)
   - [Cloner le projet](#cloner-le-projet)
+  - [Installer Hugo](#installer-hugo)
   - [Exécution en local](#exécution-en-local)
   - [Construction du site statique](#construction-du-site-statique)
 - [Tutoriel](#tutoriel)
@@ -24,6 +25,63 @@ Un générateur de site web, [HUGO](https://gohugo.io/), sera utilisé pour gén
 ```bash
 git clone --recursive https://github.com/smahot/pimo-wpf.git
 ```
+
+### Installer Hugo
+
+Lien de la documentation : [Intaller Hugo](https://gohugo.io/getting-started/installing)
+
+Autrement sur Windows, pour la version 0.68.3 :
+
+- Lancer l'`invite de commande` et se positionner sur le bureau :
+
+```bash
+cd Desktop
+```
+
+- Télécharger la [dernière version de l'archive](https://github.com/gohugoio/hugo/releases/latest) :
+
+```bash
+wget https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_0.68.3_Windows-64bit.zip
+```
+
+Ou lancez votre [navigateur préféré](https://www.mozilla.org/fr/firefox/new/) et allez sur le lien [suivant](https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_0.68.3_Windows-64bit.zip), puis enregistrez le sur votre bureau.
+
+- Décompresser l'archive dans un dossier appelé hugo:
+
+Avec [7-zip](https://www.7-zip.fr/download.html) :
+
+```bash
+"C:\Program Files\7-Zip\7z.exe" x hugo_*_Windows-64bit.zip -ohugo
+```
+
+Avec Powershell :
+
+```powershell
+Expand-Archive "hugo_*_Windows-64bit.zip" "hugo"
+```
+
+- Déplacer le dossier `hugo` dans le dossier `Documents` par exemple :
+
+```bash
+move hugo %userprofile%\Documents
+```
+
+Le dossier doit contenir :
+
+```txt
+- hugo.exe (l'exécutable dont on a besoin)
+- LICENSE (le fichier de license)
+- README.md (le readme markdown, à ouvrir avec VS Code par exemple)
+```
+
+- Ajouter le dossier contenant l'executable au path
+
+```bash
+path=%path%;%userprofile%\Documents\hugo
+```
+
+Le programme doit maintenant pouvoir être utilisé en ligne de commande avec `hugo`.
+Vous pouvez supprimer l'archive `zip` de votre bureau.
 
 ### Exécution en local
 
