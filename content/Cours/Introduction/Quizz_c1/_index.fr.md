@@ -1,7 +1,7 @@
 +++
 title = "Quizz Chapitre 1"
-weight = 1004
-pre = "<b>1.4 </b>"
+weight = 1005
+pre = "<b>1.5 </b>"
 +++
 
 {{% exercice "Quizz" %}}
