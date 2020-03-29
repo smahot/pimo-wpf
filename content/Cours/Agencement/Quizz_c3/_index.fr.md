@@ -296,7 +296,7 @@ d)	Rentrer un mot de passe
 ---
 
 {{% exercice "Quizz" %}}
-**Question 14 :** On se place dans une grid Grid avec 3 colonnes et 3 lignes. Comment placer un textblock txt dans la 2 ligne et 2 colonne ? 
+**Question 14 :** On se place dans une grid Grid avec 3 colonnes et 3 lignes. Comment placer un textblock txt dans la 2ème ligne et 2ème colonne ? 
 {{% /exercice %}}
 
 a)	Txt.SetColumn(1) ; Txt.SetRow(1) ;  

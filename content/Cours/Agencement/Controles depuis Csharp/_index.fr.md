@@ -56,135 +56,66 @@ Pour ce faire, comme nous sommes dans la partial class MainWindow, et que l’é
 Si vous exécutez le code maintenant, vous allez voir que cette fois-ci vous obtiendrez bien le résultat désiré. A noter que l’objet MainWindow a d’autres propriétés comme Height, Width, Background…
 
 {{% exercice %}}
-Reproduisez à l’aide des boutons, d’un Canvas et d’une TextBox le résultat suivant de façon dynamique :
+Dans une Grid appelée x :Name=Grille, créez dynamiquement 4 boutons, un dans chaque angles avec un numéro précis, comme dans l’image qui suit :
 {{% /exercice %}}
 
-![image1](/img/3.2/img01.png?height=300px)
+![image1ex](/img/3.2/im01exemple.png?height=300px)
 
 {{% expand "Correction" %}}
+Correction : Il existe de nombreuses façon de faire cet exercice. Une approche basique serait de déclarer à la mano chaque bouton puis de leur attribuer un à un leurs attributs. Plutôt que de faire comme ça, nous allons justement utiliser la liberté offerte par la création dynamique pour créer ces boutons on the fly !
 
 ```csharp
-Canvas cv = new Canvas();
+        {
+            InitializeComponent();
+            // comme je l'ai dit, aucune déclaration brute du bouton, tout va se passer dans une boucle for !
+            
+            for(int iter = 1; iter < 5; iter++)
+            {
+                // on crée une instance de bouton
+                Button b = new Button();
 
-TextBox txtb = new TextBox();
+                // comme on le voit sur l'image, tous les boutons ont la même taille, donc on généralise les dimensions par 75*75
+                b.Height = 75;
+                b.Width = 75;
 
-Button h = new Button();
-Button e = new Button();
-Button l = new Button();
-Button o = new Button();
+                // changeons un peu de couleur ! un beau gris...
+                b.Background = Brushes.Gray;
 
-Button excl = new Button();
-Button esp = new Button();
+                // Le contenu du bouton ! avec cette méthode, rien de plus facile pou changer son nom !
+                b.Content = "Button" + iter;
 
-public MainWindow()
-{
-    InitializeComponent();
-    MakingGrid();
-}
+                // on lui donne le même nom, comme ça on pourra l'appeler s'il faut rajouter des événements plus tard.
+                b.Name = "Button" + iter;
 
-private void MakingGrid()
-{
-    cv.Height = 480;
-    cv.Width = 420;
-    txtb.IsEnabled = false;
-    txtb.Height = 300;
-    txtb.Width = 390;
-    txtb.FontSize = 30;
-    Canvas.SetLeft(txtb, 10);
-    Canvas.SetTop(txtb, 10);
-    cv.Children.Add(txtb);
-    h.Height = 30;
-    h.Width = 30;
-    h.Content = "H";
-    h.FontSize = 20;
-    h.FontWeight = FontWeights.Bold;
-    h.Background = Brushes.Honeydew;
-    Canvas.SetLeft(h, 10);
-    Canvas.SetTop(h, 320);
-    h.Click += btn_h;
-    cv.Children.Add(h);
-    e.Height = 30;
-    e.Width = 30;
-    e.Content = "E";
-    e.FontSize = 20;
-    e.FontWeight = FontWeights.Bold;
-    e.Background = Brushes.Honeydew;
-    Canvas.SetLeft(e, 45);
-    Canvas.SetTop(e, 320);
-    e.Click += btn_e;
-    cv.Children.Add(e);
-    l.Height = 30;
-    l.Width = 30;
-    l.Content = "L";
-    l.FontSize = 20;
-    l.FontWeight = FontWeights.Bold;
-    l.Background = Brushes.Honeydew;
-    Canvas.SetLeft(l, 80);
-    Canvas.SetTop(l, 320);
-    l.Click += btn_l;
-    cv.Children.Add(l);
-    o.Height = 30;
-    o.Width = 30;
-    o.Content = "O";
-    o.FontSize = 20;
-    o.FontWeight = FontWeights.Bold;
-    o.Background = Brushes.Honeydew;
-    Canvas.SetLeft(o, 115);
-    Canvas.SetTop(o, 320);
-    o.Click += btn_o;
-    cv.Children.Add(o);
-    excl.Height = 30;
-    excl.Width = 30;
-    excl.Content = "!";
-    excl.FontSize = 20;
-    excl.FontWeight = FontWeights.Bold;
-    excl.Background = Brushes.Honeydew;
-    Canvas.SetLeft(excl, 150);
-    Canvas.SetTop(excl, 320);
-    excl.Click += btn_excl;
-    cv.Children.Add(excl);
-    esp.Height = 30;
-    esp.Width = 30;
-    esp.Content = " ";
-    esp.FontSize = 20;
-    esp.FontWeight = FontWeights.Bold;
-    esp.Background = Brushes.Honeydew;
-    Canvas.SetLeft(esp, 185);
-    Canvas.SetTop(esp, 320);
-    esp.Click += btn_esp;
-    cv.Children.Add(esp);
-    this.Content = cv;
-}
+                // assez archaïque, mais ça fera l'affaire pour donner l'alignement du bouton.
+                if(iter==1)
+                {
+                    b.HorizontalAlignment = HorizontalAlignment.Left;
+                    b.VerticalAlignment = VerticalAlignment.Top;
 
-private void btn_h(object sender, EventArgs ev)
-{
-    txtb.Text = txtb.Text + "h";
-}
+                }
+                else if(iter==2)
+                {
+                    b.HorizontalAlignment = HorizontalAlignment.Right;
+                    b.VerticalAlignment = VerticalAlignment.Top;
+                }
+                else if (iter == 3)
+                {
+                    b.HorizontalAlignment = HorizontalAlignment.Right;
+                    b.VerticalAlignment = VerticalAlignment.Bottom;
+                }
+                else if (iter == 4)
+                {
+                    b.HorizontalAlignment = HorizontalAlignment.Left;
+                    b.VerticalAlignment = VerticalAlignment.Bottom;
+                }
 
-private void btn_e(object sender, EventArgs ev)
-{
-    txtb.Text = txtb.Text + "e";
-}
+                // enfin, on l'ajoute à la grille et vous observez qu'ils apparaissent bel et bien sur la grille.
+                Grille.Children.Add(b);
+            }
 
-private void btn_l(object sender, EventArgs ev)
-{
-    txtb.Text = txtb.Text + "l";
-}
+        }
 
-private void btn_o(object sender, EventArgs ev)
-{
-    txtb.Text = txtb.Text + "o";
-}
-
-private void btn_excl(object sender, EventArgs ev)
-{
-    txtb.Text = txtb.Text + "!";
-}
-
-private void btn_esp(object sender, EventArgs ev)
-{
-    txtb.Text = txtb.Text + " ";
-}
 ```
 
 {{% /expand %}}
@@ -474,234 +405,79 @@ Nous avons déjà évoqué comment attribuer du texte et choisir les caractéris
     cbx.IsThreeState = true;
 
 {{% exercice %}}
-Pour aller plus loin, vous pouvez essayer de reproduire ceci en dynamique :
+En suivant le modèle de l'image, créez un bouton qui demande un chiffre pour ajouter à la fenêtre le même nombre de checkbox. 
 {{% /exercice %}}
 
-![image6](/img/3.2/img06.png?height=200px)
-
-![image7](/img/3.2/img07.png?height=200px)
+![image6ex](/img/3.2/im02exemple.png?height=200px)
 
 {{% expand "Correction" %}}
 
 ```csharp
-Canvas cv = new Canvas();
+TextBox txtb = new TextBox();
+        public MainWindow()
+        {
+            InitializeComponent();
+            // comme je l'ai dit, aucune déclaration brute du bouton, tout va se passer dans une boucle for !
 
-TextBox t_fname = new TextBox();
-TextBox t_lname = new TextBox();
-TextBox t_birth = new TextBox();
-TextBox t_mail = new TextBox();
-TextBox t_tele = new TextBox();
+            // On crée une textbox
+            
+            txtb.VerticalAlignment = VerticalAlignment.Top;
+            txtb.HorizontalAlignment = HorizontalAlignment.Center;
+            txtb.Name = "txtbox";
+            txtb.Height = 50; txtb.Width = 100;
 
-Button sd = new Button();
+            // Le bouton qui va avec...
+            Button new_b = new Button();
+            new_b.Height = 50;
+            new_b.Width = 50;
+            Thickness margin = new_b.Margin;
+            margin.Top = 75;
+            new_b.Margin = margin;
+            new_b.HorizontalAlignment = HorizontalAlignment.Center;
+            new_b.VerticalAlignment = VerticalAlignment.Top;
+            new_b.Content = "Ask";
+            new_b.Click += Button_Click;
 
-ListBox result = new ListBox();
+            // et on les ajoute tous deux dans la grille.
+            Grille.Children.Add(txtb);
+            Grille.Children.Add(new_b);
 
-public MainWindow()
-{
-    InitializeComponent();
-    MakingCanvas();
-}
+        }
 
-private void MakingCanvas()
-{
+        // event lié au bouton ask
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // s'il y a un chiffre renseigné...
+            if(txtb.Text.Length>0)
+            {
+                // on le récupére
+                int ask_number = Convert.ToInt32(txtb.Text);
 
-    cv.Height = 500;
-    cv.Width = 500;
-    Label lb = new Label();
-    lb.Height = 50;
-    lb.Width = 400;
-    lb.Foreground = Brushes.BlueViolet;
-    lb.FontSize = 20;
-    lb.HorizontalContentAlignment = HorizontalAlignment.Center;
-    lb.FontWeight = FontWeights.Bold;
-    lb.Content = "Press 'Enter' key, for delivering values";
-    Canvas.SetLeft(lb, 10);
-    Canvas.SetTop(lb, 20);
-    cv.Children.Add(lb);
-    Label fname = new Label();
-    fname.Height = 30;
-    fname.Width = 100;
-    fname.FontSize = 15;
-    fname.FontWeight = FontWeights.Bold;
-    fname.Content = "First Name";
-    Canvas.SetLeft(fname, 20);
-    Canvas.SetTop(fname, 80);
-    cv.Children.Add(fname);
-    Label lname = new Label();
-    lname.Height = 30;
-    lname.Width = 100;
-    lname.FontSize = 15;
-    lname.FontWeight = FontWeights.Bold;
-    lname.Content = "Last Name";
-    Canvas.SetLeft(lname, 20);
-    Canvas.SetTop(lname, 140);
-    cv.Children.Add(lname);
-    Label birth = new Label();
-    birth.Height = 30;
-    birth.Width = 200;
-    birth.FontSize = 15;
-    birth.FontWeight = FontWeights.Bold;
-    birth.Content = "Birth (dd/mm/yyyy)";
-    Canvas.SetLeft(birth, 20);
-    Canvas.SetTop(birth, 200);
-    cv.Children.Add(birth);
-    Label tele = new Label();
-    tele.Height = 30;
-    tele.Width = 200;
-    tele.FontSize = 15;
-    tele.FontWeight = FontWeights.Bold;
-    tele.Content = "Telephone";
-    Canvas.SetLeft(tele, 20);
-    Canvas.SetTop(tele, 260);
-    cv.Children.Add(tele);
-    Label mail = new Label();
-    mail.Height = 30;
-    mail.Width = 200;
-    mail.FontSize = 15;
-    mail.FontWeight = FontWeights.Bold;
-    mail.Content = "E-MAIL";
-    Canvas.SetLeft(mail, 20);
-    Canvas.SetTop(mail, 320);
-    cv.Children.Add(mail);
-    t_fname.Height = 30;
-    t_fname.Width = 100;
-    t_fname.FontSize = 15;
-    t_fname.VerticalContentAlignment = VerticalAlignment.Center;
-    Canvas.SetLeft(t_fname, 22);
-    Canvas.SetTop(t_fname, 110);
-    cv.Children.Add(t_fname);
-    t_lname.Height = 30;
-    t_lname.Width = 100;
-    t_lname.FontSize = 15;
-    t_lname.VerticalContentAlignment = VerticalAlignment.Center;
-    Canvas.SetLeft(t_lname, 22);
-    Canvas.SetTop(t_lname, 170);
-    cv.Children.Add(t_lname);
-    t_birth.Height = 30;
-    t_birth.Width = 100;
-    t_birth.FontSize = 15;
-    t_birth.VerticalContentAlignment = VerticalAlignment.Center;
-    Canvas.SetLeft(t_birth, 22);
-    Canvas.SetTop(t_birth, 230);
-    cv.Children.Add(t_birth);
-    t_tele.Height = 30;
-    t_tele.Width = 100;
-    t_tele.FontSize = 13;
-    t_tele.VerticalContentAlignment = VerticalAlignment.Center;
-    Canvas.SetLeft(t_tele, 22);
-    Canvas.SetTop(t_tele, 290);
-    cv.Children.Add(t_tele);
-    t_mail.Height = 30;
-    t_mail.Width = 100;
-    t_mail.FontSize = 13;
-    t_mail.VerticalContentAlignment = VerticalAlignment.Center;
-    Canvas.SetLeft(t_mail, 22);
-    Canvas.SetTop(t_mail, 350);
-    cv.Children.Add(t_mail);
-    Label youare = new Label();
-    youare.Height = 50;
-    youare.Width = 100;
-    youare.FontSize = 20;
-    youare.FontWeight = FontWeights.Bold;
-    youare.Content = "You Are";
-    youare.Foreground = Brushes.DodgerBlue;
-    Canvas.SetLeft(youare, 300);
-    Canvas.SetTop(youare, 100);
-    cv.Children.Add(youare);
-    result.Height = 200;
-    result.Width = 200;
-    result.FontSize = 12;
-    result.FontWeight = FontWeights.SemiBold;
-    Canvas.SetLeft(result, 240);
-    Canvas.SetTop(result, 150);
-    cv.Children.Add(result);
-    sd.Height = 25;
-    sd.Width = 50;
-    sd.FontSize = 13;
-    sd.Content = "Send";
-    Canvas.SetLeft(sd, 45);
-    Canvas.SetTop(sd, 400);
-    cv.Children.Add(sd);
-    t_fname.Focus();
-    t_fname.KeyDown += T_fname_KeyDown;
-    t_lname.KeyDown += T_lname_KeyDown;
-    t_birth.KeyDown += T_birth_KeyDown;
-    t_tele.KeyDown += T_tele_KeyDown;
-    t_mail.KeyDown += T_mail_KeyDown;
-    sd.Click += btn_send;
-    this.Content = cv;
-}
+                // comme la fenêtre est petite, on se limite à 6 (7 en comptant 0)
+                if (ask_number>6)
+                {
+                    ask_number = 6;
+                }
 
-private void T_fname_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.Key.Equals(Key.Enter))
-    {
-        t_lname.Focus();
-    }
-    else if (e.Key.Equals(Key.Tab))
-    {
-        t_fname.Text = "Press Enter";
-    }
-}
+                // on crée alors dynamiquement notre checkbox
+                for(int i =0; i<ask_number;i++)
+                {
+                    CheckBox new_cb = new CheckBox();
+                    new_cb.Height = 50; new_cb.Width = 300;
+                    new_cb.Content = "Do you like the number : " + i;
+                    new_cb.HorizontalAlignment = HorizontalAlignment.Center;
+                    new_cb.VerticalAlignment = VerticalAlignment.Top;
+                    Thickness margin = new_cb.Margin;
+                    margin.Top = 65 * (i + 2);
+                    new_cb.Margin = margin;
 
-private void T_lname_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.Key.Equals(Key.Enter))
-    {
-        t_birth.Focus();
-    }
-    else if (e.Key.Equals(Key.Tab))
-    {
-        t_lname.Text = "Press Enter";
-    }
-}
+                    Grille.Children.Add(new_cb);
+                }
 
-private void T_birth_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.Key.Equals(Key.Enter))
-    {
-        t_tele.Focus();
-    }
 
-    else if (e.Key.Equals(Key.Tab))
-    {
-        t_birth.Text = "Press Enter";
-    }
-}
+            }
+        }
 
-private void T_tele_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.Key.Equals(Key.Enter))
-    {
-        t_mail.Focus();
-    }
-    else if (e.Key.Equals(Key.Tab))
-    {
-        t_tele.Text = "Press Enter";
-    }
-}
-
-private void T_mail_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.Key.Equals(Key.Enter))
-    {
-        sd.Focus();
-    }
-    else if (e.Key.Equals(Key.Tab))
-    {
-        t_mail.Text = "Press Enter";
-    }
-}
-
-private void btn_send(object sender, EventArgs e)
-{
-    result.Items.Add("Your first Name : " + t_fname.Text);
-    result.Items.Add("Your Last Name : " + t_lname.Text);
-    result.Items.Add("Your birth : " + t_birth.Text);
-    result.Items.Add("Your Phone Number : " + t_tele.Text);
-    result.Items.Add("Your E-MAIL Address : " + t_mail.Text);
-    sd.IsEnabled = false;
-}
 ```
 
 {{% /expand %}}
@@ -849,98 +625,50 @@ Maintenant que nous avons notre TextBlock, nous pouvons l’ajouter à notre Sta
     stp.Children.Add(txtbl);
 
 {{% exercice %}}
-Essayez d’obtenir grâce au Stack Panel le résultat suivant :
+Repdroduisez l'empilement de bouton de l'image avec un Stack Panel que vous remplissez dynamiquement. Vous devrez utiliser une boucle for pour créer et ajouter ces boutons.
 {{% /exercice %}}
 
-![image8](/img/3.2/img08.png?height=200px)
-
-![image9](/img/3.2/img09.png?height=200px)
+![image8](/img/3.2/im03exemple.png?height=200px)
 
 {{% expand "Correction" %}}
 
 ```csharp
-Grid myGrid = new Grid();
+// on déclare le stackpanel
+        StackPanel stpl = new StackPanel();
+        
 
-ListBox lbx = new ListBox();
-TextBox txtb1 = new TextBox();
-TextBox txtb2 = new TextBox();
-TextBox txtb3 = new TextBox();
+        public MainWindow()
+        {
+            InitializeComponent();
+            
+            // on donne les caractéristiques que l'on veut au stackpanel avant de l'ajouter à la grille
+            stpl.Height = 300;
+            stpl.Width = 250;
+            stpl.HorizontalAlignment = HorizontalAlignment.Center;
 
-public MainWindow()
-{
-    InitializeComponent();
-    MakingStackPanel();
-}
+            Grille.Children.Add(stpl);
 
-private void MakingStackPanel()
-{
-    StackPanel sp = new StackPanel();
-    sp.Orientation = Orientation.Vertical;
-    sp.Width = 400;
-    sp.Height = 500;
-    sp.HorizontalAlignment = HorizontalAlignment.Left;
-    sp.VerticalAlignment = VerticalAlignment.Top;
-    sp.Background = Brushes.AliceBlue;
-    Label lb = new Label();
-    lb.Height = 50;
-    lb.Width = 400;
-    lb.Content = "Simple Message !";
-    lb.FontSize = 25;
-    lb.Foreground = Brushes.IndianRed;
-    lb.HorizontalContentAlignment = HorizontalAlignment.Center;
-    lb.FontWeight = FontWeights.Bold;
-    sp.Children.Add(lb);
-    txtb1.Width = 300;
-    txtb1.Height = 50;
-    txtb1.IsReadOnly = true;
-    sp.Children.Add(txtb1);
-    txtb2.Width = 300;
-    txtb2.Height = 50;
-    txtb2.IsReadOnly = true;
-    sp.Children.Add(txtb2);
-    txtb3.Width = 300;
-    txtb3.Height = 50;
-    txtb3.IsReadOnly = true;
-    txtb3.Margin = new Thickness(0, 0, 0, 125);
-    sp.Children.Add(txtb3);
-    Button btn1 = new Button();
-    btn1.Height = 45;
-    btn1.Width = 300;
-    btn1.FontSize = 15;
-    btn1.Content = "Hi, I'm PIMO.";
-    btn1.Click += btn_hi;
-    sp.Children.Add(btn1);
-    Button btn2 = new Button();
-    btn2.Height = 45;
-    btn2.Width = 300;
-    btn2.FontSize = 15;
-    btn2.Content = "How is the weather in Paris?";
-    btn2.Click += btn_weather;
-    sp.Children.Add(btn2);
-    Button btn3 = new Button();
-    btn3.Height = 45;
-    btn3.Width = 300;
-    btn3.FontSize = 15;
-    btn3.Content = "I hope you be healthy !";
-    btn3.Click += btn_healthy;
-    this.Content = sp;
-    sp.Children.Add(btn3);
-}
+            // on va générer 6 boutons de cette façons
+            for(int i = 0; i<6;i++)
+            {
+                Button new_b = new Button();
+                new_b.Height = 50;
+                new_b.Width = 250;
 
-private void btn_hi(object sender, EventArgs e)
-{
-    txtb1.Text = "Hi, I'm PIMO.";
-}
+                // la partie où l'on remplie le bouton
+                string cont_b = "*";
+                for(int j = 0; j<i;j++)
+                {
+                    cont_b += cont_b;
+                }
+                new_b.Content = cont_b;
+                new_b.HorizontalContentAlignment = HorizontalAlignment.Center;
 
-private void btn_weather(object sender, EventArgs e)
-{
-    txtb2.Text = "How is the weather in Paris?";
-}
+                // on ajoute ensuite ce bouton au stackpanel
+                stpl.Children.Add(new_b);
+            }
+        }
 
-private void btn_healthy(object sender, EventArgs e)
-{
-    txtb3.Text = "I hope you be healthy !";
-}
 ```
 
 {{% /expand %}}
@@ -1388,3 +1116,89 @@ private void txtbx2_changed(object sender, EventArgs e)
 Jouez avec le code et voyez ce que permet la création dynamique !
 
 Evidemment, bien plus de possibilités s’offrent à vous, vous pouvez réaliser bien plus de chose que simplement ajouter des lignes, des colonnes et des boutons.
+
+{{% exercice %}}
+A partir d'une fenêtre similaire, ajouter autant de colonnes et lignes que demandé et ajoutez dans chaque carré un bouton rouge.
+{{% /exercice %}}
+
+![image11](/img/3.2/im04exemple.png?height=200px)
+
+{{% expand "Correction" %}}
+
+```csharp
+ <Grid x:Name="Grille" Height="500" Width="500">
+        <Grid x:Name="definition" Height="50" Width="500" VerticalAlignment="Top">
+            <TextBox x:Name="Ligne" Height="40" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="3" Margin="150,0,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Colonne" Height="40" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="3" Margin="225,0,0,0" HorizontalAlignment="Left"/>
+
+            <Button x:Name="Construct" Height="40" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Build" Margin="300,0,0,0" HorizontalAlignment="Left" Click="Construct_Click"/>
+        </Grid>
+        
+     
+    </Grid>
+
+
+
+public MainWindow()
+        {
+            InitializeComponent();
+            
+            
+            
+        }
+
+        private void Construct_Click(object sender, RoutedEventArgs e)
+        {
+            if(Colonne.Text.Length>0 && Ligne.Text.Length>0)
+            {
+                int nbr_col = Convert.ToInt32(Colonne.Text);
+                int nbr_lig = Convert.ToInt32(Ligne.Text);
+
+                if (nbr_col > 0 && nbr_lig > 0)
+                {
+                    MessageBox.Show(Convert.ToString(nbr_col));
+                    MessageBox.Show(Convert.ToString(nbr_lig));
+
+                    for(int col = 0; col<nbr_col; col++)
+                    {
+                       
+                        ColumnDefinition new_col = new ColumnDefinition();
+                        Grille.ColumnDefinitions.Add(new_col);
+                        
+                    }
+
+                    for(int lig = 0; lig<nbr_lig; lig++)
+                    {
+                        RowDefinition new_row = new RowDefinition();
+                        Grille.RowDefinitions.Add(new_row);
+                    }
+
+                    for(int c = 0; c<nbr_col; c++)
+                    {
+                        for(int l = 0; l<nbr_lig; l++)
+                        {
+                            Button new_b = new Button();
+                            new_b.Background = Brushes.Red;
+                            new_b.Height = 30;
+                            new_b.Width = 30;
+                            Grid.SetColumn(new_b, c);
+                            Grid.SetRow(new_b, l);
+                            Grille.Children.Add(new_b);
+                        }                        
+                    }
+                }
+            }
+        }
+
+```
+
+{{% /expand %}}
+
+
+
+
+
+
+---
+
+{{% button href="/exercices/c3/part2/" %}}Lien vers les exercices{{% /button %}}

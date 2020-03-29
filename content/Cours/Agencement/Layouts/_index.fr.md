@@ -426,3 +426,7 @@ Reproduisez, à l’aide de Grid et de Canvas, la figure suivante :
 {{% /exercice %}}
 
 ![image18](/img/3.1/img18.png?height=200px)
+
+---
+
+{{% button href="/exercices/c3/part1/" %}}Lien vers les exercices{{% /button %}}
