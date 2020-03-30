@@ -12,7 +12,6 @@ Voici l’organisation des éléments de la fenêtre :
 
 ![image2](/img/pendu/img02.png)
 
-
 Créer une classe spécifiquement pour le mot à deviner. Cette classe permettra de l’initialiser et de réaliser certaines fonctions de vérification (si le mot est rempli ou non, voir son avancée (ex 4 lettres sur 8)).
 
 Le joueur perd une chance à chaque fois qu’une lettre qui n’est pas dans le mot est choisie. Le joueur possède initialement 10 chances. Le joueur ne perd pas de chance lorsqu’une lettre est correctement choisie.
@@ -43,5 +42,7 @@ Permet de modifier l’attribut word_advance qui représente l’avancée de la 
 
 Permet de verifier si l’attribut advance_word de To_guess est similaire au mot à deviner. Si oui (il n’y a plus de – dans advance_word), alors le joueur a gagné. Il perd si il y a encore des – dans advance_word et si le nombre d’échecs de proposition de lettre est supérieur à 10.
 {{% /expand %}}
+
+---
 
 {{%attachments style="grey" /%}}

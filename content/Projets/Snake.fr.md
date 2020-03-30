@@ -366,3 +366,7 @@ switch (_direction)
 ## Pour aller plus loin
 
 Faites-en sorte que le SNAKE s’agrandisse quand il mange.
+
+---
+
+{{%attachments style="grey" /%}}
