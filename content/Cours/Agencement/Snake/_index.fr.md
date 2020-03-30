@@ -1,7 +1,7 @@
 +++
-title = "Snake Game"
-weight = 3003
-pre = "Projet chapitre 3 : "
+title = "Projet : Snake Game"
+weight = 3004
+pre = "<b>3.4 </b>"
 +++
 
 ![image1](/img/snake/img01.png?height=300px)

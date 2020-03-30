@@ -1,7 +1,7 @@
 +++
-title = "Pendu"
-weight = 3002
-pre = "Projet chapitre 2 : "
+title = "Projet : Pendu"
+weight = 2004
+pre = "<b>2.4 </b>"
 +++
 
 Indices de réalisation :
