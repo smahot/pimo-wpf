@@ -6,10 +6,10 @@ pre = "<b>4.1 </b>"
 
 ## 4.1 Data Binding <!-- omit in toc -->
 
-- [Exercice 1 : La Base](#exercice-1)
-- [Exercice 2 : Des Rectangles](#exercice-2)
-- [Exercice 3 : Chien en laisse](#exercice-3)
-- [Exercice 4 : Le Canvas](#exercice-4)
+- [Exercice 1 : La Base](#exercice-1--la-base)
+- [Exercice 2 : Des Rectangles](#exercice-2--des-rectangles)
+- [Exercice 3 : Chien en laisse](#exercice-3--chien-en-laisse)
+- [Exercice 4 : Databinding, classe et Listbox.](#exercice-4--databinding-classe-et-listbox)
 
 ### Exercice 1 : La Base
 

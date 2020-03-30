@@ -4,16 +4,16 @@ weight = 2002
 pre = "<b>2.2 </b>"
 +++
 
-- [a. Comment affecter un événement à un objet](#a-comment-affecter-un-evenement-a-un-objet)
-- [b. Liste des événements](#b-liste-des-événements)
-- [c. Les événements routés](#c-les-événements-routés)
-  - [Direct Event](#direct-event)
-  - [Bubbling Event](#bubbling-event)
-  - [Tunnel Events](#tunnel-events)
+- [1. Comment affecter un evenement a un objet](#1-comment-affecter-un-evenement-a-un-objet)
+- [2. Liste des événements](#2-liste-des-%c3%a9v%c3%a9nements)
+- [3. Les événements routés](#3-les-%c3%a9v%c3%a9nements-rout%c3%a9s)
+  - [a. Direct Event](#a-direct-event)
+  - [b. Bubbling Event](#b-bubbling-event)
+  - [c. Tunnel Events](#c-tunnel-events)
 
 En WPF, un événement est déclenché lorsqu’une action de l’utilisateur interagit avec les objets (bouton, image...) dans la fenêtre affichée. Ces événements permettent d’impacter l’environnement et des méthodes peuvent être rattachées à ceux-ci.
 
-## a. Comment affecter un evenement a un objet
+## 1. Comment affecter un evenement a un objet
 
 Pour affecter un évènement à un objet :
 
@@ -38,7 +38,7 @@ private void Button_Click(object sender, RoutedEventargs e)
 }
 ```
 
-## b. Liste des événements
+## 2. Liste des événements
 
 Vous trouverez ici quelques exemples mais nous vous invitons à en découvrir plus par vous-même dans la barre d’outils des évènements.
 
@@ -59,7 +59,7 @@ Vous trouverez ici quelques exemples mais nous vous invitons à en découvrir pl
 | DragOver            | Un objet est glissé avec la souris au-dessus d’un élément |
 | Drop                | Un objet est déposé avec la souris au-dessus d’un élément |
 
-## c. Les événements routés
+## 3. Les événements routés
 
 Quand un événement est émis par un élément de l’arbre visuel, il est propagé aux conteneurs successifs de cet élément. L’élément qui a déclenché l’événement est appelé élément source. Le sens de propagation est déterminé par la stratégie de routage.
 
@@ -71,7 +71,7 @@ Il existe trois types d’événements routés :
 - Bubbling Event
 - Tunneling Event
 
-### Direct Event
+### a. Direct Event
 
 Les événements directs sont des événements qui sont seulement activés par l’élément dans lequel l’événement est implémenté. L’évènement n’est pas propagé.
 
@@ -126,7 +126,7 @@ Toujours sur ce même bouton, rajoutez un événement lorsque la souris passe su
 
 {{%/expand%}}
 
-### Bubbling Event
+### b. Bubbling Event
 
 L’événement est traité au niveau de l’élément source puis successivement par chaque niveau de conteneur (dans le sens montant) jusqu'à la racine de l’arbre. D’où l’analogie avec une bulle qui remonte à la surface.
 
@@ -235,7 +235,7 @@ Chaque event va afficher grid 1, grid 2, grid 3, button…
 
 {{%/expand%}}
 
-### Tunnel Events
+### c. Tunnel Events
 
 Les événements tunnels sont les opposés des événements bulle. En effet, l’événement est d’abord traité à la racine de l’arbre, puis successivement par chaque niveau de conteneur (dans le sens descendant) jusqu’à atteindre l’élément source.
 

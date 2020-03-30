@@ -6,13 +6,13 @@ pre = "<b>2.1 </b>"
 
 ## 2.1 Les premiers contrôles <!-- omit in toc -->
 
-- [Exercice 1 : Les 4 petits boutons](#exercice-1)
-- [Exercice 2 : 4 boutons centrés](#exercice-2)
-- [Exercice 3 : Alignement de boutons](#exercice-3)
-- [Exercice 4 : Double textblock](#exercice-4)
-- [Exercice 5 : Placer deux contrôles différents](#exercice-5)
-- [Exercice 6 : La Checkbox](#exercice-6)
-- [Exercice 7 : Liste de musique](#exercice-7)
+- [Exercice 1 : Les 4 petits boutons](#exercice-1--les-4-petits-boutons)
+- [Exercice 2 : 4 boutons centrés](#exercice-2--4-boutons-centr%c3%a9s)
+- [Exercice 3 : Alignement de boutons](#exercice-3--alignement-de-boutons)
+- [Exercice 4 : Double textblock](#exercice-4--double-textblock)
+- [Exercice 5 : Placer deux contrôles différents](#exercice-5--placer-deux-contr%c3%b4les-diff%c3%a9rents)
+- [Exercice 6 : Checkbox](#exercice-6--checkbox)
+- [Exercice 7 : Liste de musique](#exercice-7--liste-de-musique)
 
 ### Exercice 1 : Les 4 petits boutons
 
@@ -46,6 +46,8 @@ Créez 4 boutons, chacun dans un angle, avec une couleur de police différent à
 ```
 
 {{%/expand%}}
+
+---
 
 ### Exercice 2 : 4 boutons centrés
 
@@ -89,6 +91,8 @@ Placez 4 boutons de 40*40 au centre, sans qu’ils ne superposent. Jouez sur les
 
 {{%/expand%}}
 
+---
+
 ### Exercice 3 : Alignement de boutons
 
 {{% exercice %}}
@@ -119,6 +123,8 @@ Alignez 4 boutons de 40*40 sur une ligne horizontale au centre de la fenêtre.
 
 {{%/expand%}}
 
+---
+
 ### Exercice 4 : Double textblock
 
 {{% exercice %}}
@@ -143,6 +149,8 @@ Créez deux TextBlocks centrés dans la fenêtre avec un texte dans chacun qui r
 
 {{%/expand%}}
 
+---
+
 ### Exercice 5 : Placer deux contrôles différents
 
 {{% exercice %}}
@@ -162,6 +170,8 @@ Créez 1 TextBox qui prend la moitié gauche de la fenêtre. Placez un bouton de
 
 {{%/expand%}}
 
+---
+
 ### Exercice 6 : Checkbox
 
 {{% exercice %}}
@@ -178,6 +188,8 @@ Créez un CheckBox dans le coin en haut à gauche avec le texte en bleu et avec 
 ```
 
 {{%/expand%}}
+
+---
 
 ### Exercice 7 : Liste de musique
 

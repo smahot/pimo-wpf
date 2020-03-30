@@ -4,8 +4,15 @@ weight = 4001
 pre = "<b>4.1 </b>"
 +++
 
-- [1. Data Binding sur des variables](#variable-data-binding)
-- [2. Data Binding sur des classes](#class-data-binding)
+- [1. Data Binding sur des variables](#1-data-binding-sur-des-variables)
+  - [a. One Way Data Binding](#a-one-way-data-binding)
+  - [a. One Way To Source Data Binding](#a-one-way-to-source-data-binding)
+  - [c. One Time Databinding](#c-one-time-databinding)
+  - [d. Two Way Databinding](#d-two-way-databinding)
+- [2. Data Binding sur des classes](#2-data-binding-sur-des-classes)
+  - [a. One-Way Data Binding](#a-one-way-data-binding-1)
+  - [b. Two-Way Data Binding](#b-two-way-data-binding)
+  - [c. Data Binding : ListBox et classe Person](#c-data-binding--listbox-et-classe-person)
 
 Le databinding est une des fonctionnalités les plus importantes du WPF. Dans cette partie du cours, nous allons voir les différents types de databinding.
 

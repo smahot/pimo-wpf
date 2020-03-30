@@ -4,13 +4,13 @@ weight = 301
 pre = "<b>3.1 </b>"
 +++
 
-## 2.1 Les Layouts <!-- omit in toc -->
+## 3.1 Les Layouts <!-- omit in toc -->
 
-- [Exercice 1 : Des briques et des layouts](#exercice-1)
-- [Exercice 2 : Enchaînement dans un StackPanel](#exercice-2)
-- [Exercice 3 : Canva multicolor](#exercice-3)
-- [Exercice 4 : Calculatrice](#exercice-4)
-- [Exercice 5 : Dessin](#exercice-5)
+- [Exercice 1 : Des briques et des layouts](#exercice-1--des-briques-et-des-layouts)
+- [Exercice 2 : Enchaînement dans un StackPanel](#exercice-2--encha%c3%aenement-dans-un-stackpanel)
+- [Exercice 3 : Canva multicolor](#exercice-3--canva-multicolor)
+- [Exercice 4 : Calculatrice](#exercice-4--calculatrice)
+- [Exercice 5 : Dessin](#exercice-5--dessin)
 
 ### Exercice 1 : Des briques et des layouts
 
@@ -107,6 +107,8 @@ Dans la partie en bas à gauche, amusez vous à reproduire une cible de tir à l
 
 {{%/expand%}}
 
+---
+
 ### Exercice 2 : Enchaînement dans un StackPanel
 
 {{% exercice %}}
@@ -140,6 +142,7 @@ Expérimentons un peu avec les marges dans les layouts. Dans une fenêtre de 300
 
 {{%/expand%}}
 
+---
 
 ### Exercice 3 : Canva multicolor
 
@@ -295,6 +298,7 @@ public partial class MainWindow : Window
 
 {{%/expand%}}
 
+---
 
 ### Exercice 4 : Calculatrice
 
@@ -506,6 +510,8 @@ public partial class MainWindow : Window
 ```
 
 {{%/expand%}}
+
+---
 
 ### Exercice 5 : Dessin
 

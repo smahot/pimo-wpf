@@ -4,12 +4,12 @@ weight = 302
 pre = "<b>3.2 </b>"
 +++
 
-## 2.1 Création dynamique de classe <!-- omit in toc -->
+## 3.2 Création dynamique de classe <!-- omit in toc -->
 
-- [Exercice 1 : Hello !](#exercice-1)
-- [Exercice 2 : La Checkbox](#exercice-2)
-- [Exercice 3 : Le Stack Panel](#exercice-3)
-- [Exercice 4 : Le Canvas](#exercice-4)
+- [Exercice 1 : Hello !](#exercice-1--hello)
+- [Exercice 2 : La Checkbox](#exercice-2--la-checkbox)
+- [Exercice 3 : Le Stack Panel](#exercice-3--le-stack-panel)
+- [Exercice 4 : Le Canvas](#exercice-4--le-canvas)
 
 
 ### Exercice 1 : Hello !

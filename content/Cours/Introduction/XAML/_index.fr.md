@@ -4,10 +4,10 @@ weight = 1002
 pre = "<b>1.2 </b>"
 +++
 
-- [a. Définitions et caractéristiques](#a-définitions-et-caractéristiques)
-- [b. Le fichier XAML](#b-le-fichier-xaml)
+- [1. Définitions et caractéristiques](#1-d%c3%a9finitions-et-caract%c3%a9ristiques)
+- [2. Le fichier XAML](#2-le-fichier-xaml)
 
-#### a. Définitions et caractéristiques
+## 1. Définitions et caractéristiques
 
 Ceux qui sont familiers avec des langages comme HTML, voire même XML, ne seront pas trop perdus pour cette partie. Ici, je vais vous expliquer comment est structuré le fichier xaml de votre projet wpf.
 
@@ -43,7 +43,7 @@ Mais il n’y a pas que ça. Et j’aurais tendance à dire que pour ce que vous
 Vous définissez un élément  ‘’truc’’ avec des caract1 et caract2. Pas de balise fermante, juste de l’information.
 Voilà ce léger point sur les balises fermé !
 
-#### b. Le fichier XAML
+## 2. Le fichier XAML
 
 Portez votre attention sur le fichier XAML :
 

@@ -4,10 +4,10 @@ weight = 2001
 pre = "<b>2.1 </b>"
 +++
 
-- [a. Création d’un bouton](#a-création-dun-bouton)
-- [b. Les autres contrôles](#b-les-autres-contrôles)
+- [1. Création d’un bouton](#1-cr%c3%a9ation-dun-bouton)
+- [2. Les autres contrôles](#2-les-autres-contr%c3%b4les)
 
-### a. Création d’un bouton
+## 1. Création d’un bouton
 
 Nous allons commencer par lancer un projet WPF app sur Visual Studio 2017/2019. Pour ce faire, utilisez soit le raccourci _Ctrl+Shift+n_, soit _File_ => _New…_ => _Project…_ Cela ouvre la fenêtre suivante :
 
@@ -135,7 +135,7 @@ Essayez d’utiliser tous ces attributs sur plusieurs boutons pour découvrir le
 
 ---
 
-#### b. Les autres contrôles
+## 2. Les autres contrôles
 
 Tout d’abord, n’oubliez pas que les attributs présentés dans la parties précédents (Width, Margin, FontSize…) sont hérités. Ils ne sont pas réservés à seulement les boutons. Ils peuvent donc être utilisés pour les autres contrôles. Pas besoin de tous les re-lister donc pour chaque autre contrôle.
 
