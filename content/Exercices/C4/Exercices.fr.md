@@ -17,7 +17,7 @@ pre = "<b>4.1 </b>"
 Créer une TextBox qui affiche ce que l’utilisateur a écrit :
 {{% /exercice %}}
 
-![image1](/img/4.1/exos/im02.png?height=300px)
+![image1](/img/4.1/exos/im01.png?height=300px)
 
 {{% expand "Correction" %}}
 
@@ -54,7 +54,7 @@ Faites en sorte que lorsque l’on entre une valeur dans la TextBox, le rectangl
 Aide : Utilisez un StackPanel pour l’user input et une grid pour la position des rectangles
 {{% /exercice %}}
 
-![image1](/img/4.1/exos/im01.png?height=300px)
+![image1](/img/4.1/exos/im02.png?height=300px)
 
 {{% expand "Correction" %}}
 
