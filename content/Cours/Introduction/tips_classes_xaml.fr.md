@@ -4,12 +4,12 @@ weight = 1003
 pre = "<b>1.3 </b>"
 +++
 
-- [Introduction aux classes - Héritage et contrôles](#introduction-aux-classes---héritage-et-contrôles)
-- [MVVM - Balises XAML et Classes partielles en code-behind](#mvvm---balises-xaml-et-classes-partielles-en-code-behind)
+- [Introduction aux classes : Héritage et contrôles](#introduction-aux-classes--héritage-et-contrôles)
+- [MVVM : Balises XAML et Classes partielles en code-behind](#mvvm--balises-xaml-et-classes-partielles-en-code-behind)
 - [Classes personnalisées](#classes-personnalisées)
-- [Créer des objets avec WPF - XAML et Csharp](#créer-des-objets-avec-wpf---xaml-et-csharp)
+- [Créer des objets avec WPF : XAML et Csharp](#créer-des-objets-avec-wpf--xaml-et-csharp)
 
-## Introduction aux classes - Héritage et contrôles
+## Introduction aux classes : Héritage et contrôles
 
 L’infrastructure UI du XAML offre une librairie extensive de contrôles qui supporte le développement d’interfaces utilisateurs pour Windows.
 Certains d’eux ont une représentation graphique, tels que Button, Textbox, TextBlock, etc.; tandis que certains sont employés comme conteneurs pour d’autres contrôles ou éléments de contenue, comme, en autres, les images.
@@ -21,7 +21,7 @@ Voici la hiérarchie d’héritage complète des éléments de contrôle :
 
 Il existe quatre classes de base - **UIElement**, **ContentElement**, **FrameworkElement** et **FrameworkContentElement** - qui implémentent un important pourcentage des fonctionnalités d’éléments communes disponibles en WPF. Ces quatre classes sont référencées, dans ce SDK, **comme classes d’éléments de base**.
 
-## MVVM - Balises XAML et Classes partielles en code-behind
+## MVVM : Balises XAML et Classes partielles en code-behind
 
 La manière la plus courante de développer des applications Windows Presentation Foundation (WPF) est d’utiliser un schéma Modèle – Vue – Vue modèle, ou MVVM.
 Il s’agit d’un design pattern qui peut être employé, dans notre cas, dans l’optique de faciliter la séparation du développement d’une GUI entre les données et la vue qui les affichent.
@@ -51,7 +51,7 @@ Vous devrez parfois écrire une classe dérivée TypeConverter personnalisée po
 
 Pour être utilisable comme un événement CLR, l’événement doit être exposé comme un événement public sur une classe qui prend en charge un constructeur sans paramètre, ou sur une classe abstraite où l’événement est accessible sur les classes dérivées.
 
-## Créer des objets avec WPF - XAML et Csharp
+## Créer des objets avec WPF : XAML et Csharp
 
 Commençons avec une application WPF, lancée sur Visual Studio, qu’on nommera `WpfApplication1`. Deux fichiers sont automatiquement générés par l’IDE : `MainWindow.xaml` et `MainWindow.xaml.cs`. Créons une classe personnalisée publique dans le fichier code-behind de type `.cs`. Plaçons la en dessous de la classe principale `MainWindow`, dans le namespace `WpfApplication1`. Nous l’appellerons `MyClass` :
 
