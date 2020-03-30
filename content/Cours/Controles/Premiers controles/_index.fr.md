@@ -210,7 +210,7 @@ En nouvel exemple, créez deux checkbox, horizontalement centrées, qui ne se su
 
 ---
 
-Le ***ListBox*** : il s’agit d’un menu défilant dans lequel vous pouvez sélectionner une option. Il vous faut précisez dans le listBox les éléments le composant.
+Le ***ListBox*** : il s’agit d’un menu défilant dans lequel vous pouvez sélectionner une option. Il vous faut préciser dans le listBox les éléments le composant.
 
 ```xml
 <ListBox Name = "listbox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin = "20,0,0,0" Width = "100" Height="30">

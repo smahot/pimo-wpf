@@ -4,7 +4,7 @@ weight = 2002
 pre = "<b>2.2 </b>"
 +++
 
-- [1. Comment affecter un evenement a un objet](#1-comment-affecter-un-evenement-a-un-objet)
+- [1. Comment affecter un événement à un objet](#1-comment-affecter-un-%c3%a9v%c3%a9nement-%c3%a0-un-objet)
 - [2. Liste des événements](#2-liste-des-%c3%a9v%c3%a9nements)
 - [3. Les événements routés](#3-les-%c3%a9v%c3%a9nements-rout%c3%a9s)
   - [a. Direct Event](#a-direct-event)
@@ -13,7 +13,7 @@ pre = "<b>2.2 </b>"
 
 En WPF, un événement est déclenché lorsqu’une action de l’utilisateur interagit avec les objets (bouton, image...) dans la fenêtre affichée. Ces événements permettent d’impacter l’environnement et des méthodes peuvent être rattachées à ceux-ci.
 
-## 1. Comment affecter un evenement a un objet
+## 1. Comment affecter un événement à un objet
 
 Pour affecter un évènement à un objet :
 

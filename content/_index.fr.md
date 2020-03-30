@@ -19,31 +19,32 @@ Présentation vidéo :
 
 ### Chapitre 1 : Bienvenue sur WPF
 
-#### a. Visual Studio
+#### 1. Visual Studio
 
 - Installation
 - Lancement du premier projet
 - Explication de l’environnement (toolbox, différentes fenêtres…)
 
-#### b. Présentation de XAML
+#### 2. Présentation de XAML
 
-- Les notions sur les balises (xml ?)
+- Les notions sur les balises 
 
 ### Chapitre 2 : Les contrôles
 
-#### a. Les premiers contrôles
+#### 1. Les premiers contrôles
 
 - Création d’un bouton
-- Explication sur la classe bouton
 - D’autres contrôles
 
-#### b. Les évènements
+#### 2. Les évènements
 
-- Listes des évènements les plus utilisés
-
+- Comment affecter un événement à un objet
+- Liste des événements
+- Les événements routés
+  
 ### Chapitre 3 : L’agencement
 
-#### a. Les layouts
+#### 1. Les layouts
 
 - StackPanel
 - WrapPanel
@@ -51,16 +52,16 @@ Présentation vidéo :
 - CanvasPanel
 - GridPanel
 
-#### b. Création de Contrôles depuis C #
+#### 2. Création des élèments de façon dynamique
 
-- Création de contrôles depuis C#
-- Agencement dynamique (oui, à préciser)
+- Quelques éléments du Chapitre 2
+- Quelques éléments du chapitre 3
+- Pourquoi utiliser la création dynamique ?
 
 ### Chapitre 4 : Databinding
 
-#### a. OneWay Databinding
-
-#### b. TwoWay Databinding
+- Data Binding sur des variables
+- Data Binding sur des classes
 
 ## Sources
 
