@@ -393,3 +393,8 @@ Si on réexécute le code :
 ![image14](/img/4.1/img14.png?height=200px)
 
 Une ObservableCollection va directement communiquer à l’interface utilisateur dès qu’il y a un changement dans la collection. Ce que la liste simple ne fait pas.
+
+---
+
+{{% button href="/exercices/c4/exercices/" %}}Lien vers les exercices{{% /button %}}
+
