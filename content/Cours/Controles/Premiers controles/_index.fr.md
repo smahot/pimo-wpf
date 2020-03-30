@@ -7,7 +7,7 @@ pre = "<b>2.1 </b>"
 - [a. Création d’un bouton](#a-création-dun-bouton)
 - [b. Les autres contrôles](#b-les-autres-contrôles)
 
-#### a. Création d’un bouton
+### a. Création d’un bouton
 
 Nous allons commencer par lancer un projet WPF app sur Visual Studio 2017/2019. Pour ce faire, utilisez soit le raccourci _Ctrl+Shift+n_, soit _File_ => _New…_ => _Project…_ Cela ouvre la fenêtre suivante :
 

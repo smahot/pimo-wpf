@@ -4,14 +4,140 @@ weight = 4001
 pre = "<b>4.1 </b>"
 +++
 
-- [One-Way Data Binding](#one-way-data-binding)
-- [Two-Way Data Binding](#two-way-data-binding)
-- [Data Binding : ListBox et classe Person](#data-binding--listbox-et-classe-person)
+- [1. Data Binding sur des variables](#variable-data-binding)
+- [2. Data Binding sur des classes](#class-data-binding)
+
+Le databinding est une des fonctionnalités les plus importantes du WPF. Dans cette partie du cours, nous allons voir les différents types de databinding.
+
+## 1. Data Binding sur des variables
+
+Dans cette partie, nous utiliserons le Data Binding sur des variables. Plus tard, vous verrez leur utilisation sur des classes.
+
+### a. One Way Data Binding
+
+En one way databinding,  la valeur source va affecter la valeur cible. Dans votre code, il faudra implémenter une section.  
+Dans votre code, il faudra alors utiliser l’extension System.Windows.Data.Binding en passant en mode “OneWay”.
+
+Voici un exemple : entrez le code ci desous dans le fichier xaml d'un projet wpf (attention au nom du projet ! ici, il s'appelle exmple_oneway).
+
+```xml
+<Window x:Class="exemple_oneway.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:exemple_oneway"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Slider Name="mySlider" Maximum="100" Minimum="0" Margin="20"></Slider>
+            <TextBox Name="txtValue" Text="{Binding ElementName=mySlider, Path=Value, Mode=OneWay}" Margin="20" Width="50" Height="30"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
+
+```
+
+Vous obtiendrez la fenêtre suivante : 
+
+![image11](/img/4.1/im1.png?height=400px)
+
+Essayez de faire varier le slider. Vous verrez alors que la valeur contenue dans la Textbox changera.
+
+![image12](/img/4.1/im2.png?height=400px)
+
+Cependant, si vous essayez d’insérer une valeur dans la Textbox, la valeur du slider ne sera pas mise à jour.
+
+![image13](/img/4.1/im3.png?height=400px)
+
+
+
+### a. One Way To Source Data Binding
+
+En one way to source databinding, la cible contrôle la mise à jour de la valeur source. Il s’agit tout simplement de l’inverse du one way databinding. Comme pour notre exemple vu en one way, nous allons réaliser l’exemple inverse, c’est-à-dire la textbox va update le slider.
+
+Exemple : Entrez le code suivant :
+
+```xml
+<Window x:Class="exemple_onewaytosource.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:exemple_onewaytosource"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+
+            <Separator BorderThickness="20" BorderBrush="Black"></Separator>
+            <Slider Name="mySlider4" Maximum="100" Minimum="0" Margin="20"></Slider>
+            <TextBox Name="txtvalue4" Text="{Binding ElementName=mySlider4,
+                                                Path=Value,
+                                                Mode=OneWayToSource, 
+                                                UpdateSourceTrigger=PropertyChanged}" 
+                                                Margin="20" Width="50" Height="30">
+            </TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
+```
+
+Vous obtiendrez alors la fenêtre suivante :
+
+![image13](/img/4.1/im4.PNG?height=400px)
+
+Si vous changez la valeur contenue dans la textbox, le slider bougera en fonction de cette valeur, mais pas inversement.
+
+
+### c. One Time Databinding
+
+Le one time databinding fonctionne comme le one way à l’exception qu’il ne fonctionne qu’une seule fois. C’est-à-dire que la valeur cible pourra être changée uniquement à l’initialisation de votre code. Cela signifie qu’elle ne peut être changée que dans votre code WPF, aucune autre extension de code est nécessaire.
+
+### d. Two Way Databinding
+
+Comme son nom l’indique, en two way databinding, la source va update la cible et vice-versa. Cela implique que si la valeur de la source est changée, la valeur de la cible le sera aussi changée. Si la valeur de la cible est changée, la valeur de la source le sera aussi.
+Dans votre code, il faudra alors utiliser l’extension System.Windows.Data.Binding comme ceci :
+•	Passer l’attribut mode en “TwoWay”
+•	Utiliser l’attribut UpdateSourceTrigger pour signaler quand est-ce que la source devrait être updatée. Pour cela, il faut passer la valeur de cet attribut à “PropertyChanged”. La mise à jour de la valeur se fera alors automatiquement.
+
+Voilà un autre exemple : copiez les code ci-dessous dans votre ficher xaml.
+
+```xml
+<Window x:Class="TwoWayBinding.Window1"
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="361.648" Width="543.608">
+    <Grid Height="54" Width="165">
+        <TextBox  Name="textBox" Margin="0,-77,0,0" Height="23" VerticalAlignment="Top"
+                Text ="{Binding ElementName=listBox,
+                        Path=SelectedItem.Content,
+                        Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged}"
+                Background="{Binding ElementName=listBox, Path=SelectedItem.Content, Mode=OneWay}" HorizontalAlignment="Left" Width="165">
+        </TextBox>
+        <ListBox Name="listBox"  >
+            <ListBoxItem Content="Green"/>
+            <ListBoxItem  Content="Yellow" IsSelected="True"/>
+            <ListBoxItem Content="Orange" />
+        </ListBox>
+    </Grid>
+</Window>
+```
+Vous obtiendrez alors la fenêtre suivante :
+
+![image15](/img/4.1/im5.PNG?height=400px)
+
+Lorsque vous parcourez les éléments dans la liste, vous pouvez voir que la valeur de la Textbox et sa couleur changent en même temps que vous choisissez un élément de la liste. De plus, si vous écrivez du texte dans la Textbox, la valeur que vous avez sélectionnée dans la liste changera aussi.
+
+## 2. Data Binding sur des classes
 
 Dans cette partie, nous allons vous montrer qu’il est possible de faire ce databinding via les variables d’une classe.
 Nous allons vous montrer ici un exemple basique en utilisant une classe Personne.
 
-## One-Way Data Binding
+### a. One-Way Data Binding
 
 ![image1](/img/4.1/img01.png?height=200px)
 
@@ -115,7 +241,7 @@ Si vous appuyez encore une fois sur le bouton Show, cela affichera le même mess
 
 Cela est dû au fait que le mode de data binding est “one-way” dans le code XAML. Pour afficher la mise à jour de l'âge et du nom, il faut utiliser le two-way databinding.
 
-## Two-Way Data Binding
+### b. Two-Way Data Binding
 
 Prenons le même exemple mais changeons le mode de dataBinding :
 
@@ -169,7 +295,7 @@ Si vous appuyez sur le bouton Show, vous verrez cette fois ci que le message a �
 
 ![image9](/img/4.1/img09.png?height=200px)
 
-## Data Binding : ListBox et classe Person
+### c. Data Binding : ListBox et classe Person
 
 Nous allons également voir pourquoi utiliser des observable collection plutôt que des List en WPF.
 Nous reprendrons la classe Person qui a été créée juste avant.
