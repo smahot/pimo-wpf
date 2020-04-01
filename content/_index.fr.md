@@ -60,7 +60,7 @@ Présentation vidéo :
 
 ### Chapitre 4 : Databinding
 
-- Data Binding sur des variables
+- Data Binding sur des éléments
 - Data Binding sur des classes
 
 ## Sources

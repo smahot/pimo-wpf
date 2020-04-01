@@ -4,78 +4,196 @@ weight = 4001
 pre = "<b>4.1 </b>"
 +++
 
-- [1. Data Binding sur des variables](#1-data-binding-sur-des-variables)
-  - [a. One Way Data Binding](#a-one-way-data-binding)
-  - [a. One Way To Source Data Binding](#a-one-way-to-source-data-binding)
-  - [c. One Time Databinding](#c-one-time-databinding)
-  - [d. Two Way Databinding](#d-two-way-databinding)
+- [1. Data Binding sur des éléments](#1-data-binding-sur-des-%c3%a9l%c3%a9ments)
+  - [a. L'origine du problème](#a-lorigine-du-probl%c3%a8me)
+  - [b. One Way Data Binding](#b-one-way-data-binding)
+  - [c. Two Time Databinding](#c-two-time-databinding)
+  - [d. One Time Databinding](#d-one-time-databinding)
+  - [e. One Way To Source Databinding](#e-one-way-to-source-databinding)
 - [2. Data Binding sur des classes](#2-data-binding-sur-des-classes)
-  - [a. One-Way Data Binding](#a-one-way-data-binding-1)
+  - [a. One-Way Data Binding](#a-one-way-data-binding)
   - [b. Two-Way Data Binding](#b-two-way-data-binding)
   - [c. Data Binding : ListBox et classe Person](#c-data-binding--listbox-et-classe-person)
 
-Le databinding est une des fonctionnalités les plus importantes du WPF. Dans cette partie du cours, nous allons voir les différents types de databinding.
 
-## 1. Data Binding sur des variables
 
-Dans cette partie, nous utiliserons le Data Binding sur des variables. Plus tard, vous verrez leur utilisation sur des classes.
+## 1. Data Binding sur des éléments
 
-### a. One Way Data Binding
+Le databinding est une des fonctionnalités les plus importantes de WPF. Le principe est simple : vous désignez une variable ou classe que vous affichez à l’aide d’un élément comme textblock ou textbox. 
 
-En one way databinding,  la valeur source va affecter la valeur cible. Dans votre code, il faudra implémenter une section.  
-Dans votre code, il faudra alors utiliser l’extension System.Windows.Data.Binding en passant en mode “OneWay”.
+### a. L'origine du problème
 
-Voici un exemple : entrez le code ci desous dans le fichier xaml d'un projet wpf (attention au nom du projet ! ici, il s'appelle exmple_oneway).
+Pour commencer, nous allons nous attarder au databinding sur un élément. Plus tard, nous vous expliquerons comment cela fonctionne avec une classe.
+
+Prenons un exemple : 
+```xml
+<Grid>
+        <TextBox x:Name="Affichage" Width="400" Height="200" FontSize="50" Foreground="Purple" Text="Bonjour"/>
+        <TextBlock x:Name="relier" Width="400" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" Text="Bonjour" />
+ </Grid>
+```
+Lorsque vous lancez le programme, Bonjour s’affiche dans les deux textbox et textblock, pas de souci.
+
+![image13](/img/4.1/im01.png?height=400px)
+
+Vous pouvez aussi modifier le texte du Textbox (en violet). Cependant, cela ne modifie pas le contenue du textblock. Encore une fois, c’est normal, les deux contenues (ici, Text) ont été définis séparément.
+Supposons que vous voulez que ce que vous écrivez dans le textbox s’affiche aussi dans le textblock, comment faire ?
+
+Une possibilité, peu élégante, serait de rajouter un bouton qui aurait un événement qui copierait le text du textbox et le mettrait dans le textbloc. L’ennui, c’est que cela demande une intervention directe de la part de l’utilisateur, et le changement ne se fait pas en temps réel.
+Pour résoudre ce problème, nous allons alors utiliser le Data Binding !
+
+
+### b. One Way Data Binding
+
+Le databinding permet d’update en temps réel la variable auquel il est attribué. Cela permet d’éviter le scénario décrit plus haut qui utiliserait un bouton.
+Pour ce faire, rien de plus simple, on va ajouter à l’attribut Text de notre Textblock la ligne suivante :
+"{Binding ElementName=Affichage, Path=Text, Mode=OneWay}"
+Ce qui nous donnerait :
 
 ```xml
-<Window x:Class="exemple_oneway.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:exemple_oneway"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+<Grid>
+        <TextBox x:Name="Affichage" Width="400" Height="200" FontSize="50" Foreground="Purple" Text="Bonjour"/>
+        <TextBlock x:Name="relier" Width="400" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" Text="{Binding ElementName=Affichage, Path=Text, Mode=OneWay}"/>
+</Grid>
+```
+Compilez, vous allez voir, c’est magique ! Tout ce que vous écrivez dans le Textbox va effectivement se retrouver dans le Textblock.
+
+![image13](/img/4.1/im02.png?height=400px)
+
+- {Binding …} : il s’agit de la nomenclature normale lorsque l’on fait usage du databinding.
+ElementName=… : il faut renseigner le Name de l’élément que vous voulez databinder, dont vous voulez récupérer le Text/Content. Ici, il s’agit de Affichage.
+
+- Path=… : il faut renseigner l’attribut à cibler de l’élément. Normalement, on met Text ou Content en fonction de l’élément ciblé. Ici, on vise un Textblock, donc Text.
+
+- Mode=… : Une propriété très intéressante que nous allons voir tout de suite. 
+
+- OneWay = Pour faire simple, il s’agit du sens d’update de la variable. OneWay signifie dans notre cas que « relier » va changer en fonction d’ « affichage », mais pas l’inverse. Par exemple, vous voyer bien que modifier Affichage modifie aussi « relier ». Mais si l’ont crée un événement qui modifie le texte de « relier », alors le texte d’ « affichage » ne change pas.
+
+Pour vérifier cela, transformez « relier » en textbox :
+
+```xml
+<Grid>
+        <TextBox x:Name="Affichage" Width="400" Height="200" FontSize="50" Foreground="Purple" Text="Bonjour" TextWrapping="Wrap"/>
+        <TextBox x:Name="relier" Width="400" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="{Binding ElementName=Affichage, Path=Text, Mode=OneWay}"/>
+</Grid>
+```
+![image13](/img/4.1/im03.png?height=400px)
+
+Bien que j’eusse écris hello en haut, puis magie dans « relier », rien ne change en haut.
+
+Voilà un autre exemple un peu plus ‘concret’ utilisant un slider : 
+```xml
+<Grid>
         <StackPanel Orientation="Vertical">
             <Slider Name="mySlider" Maximum="100" Minimum="0" Margin="20"></Slider>
             <TextBox Name="txtValue" Text="{Binding ElementName=mySlider, Path=Value, Mode=OneWay}" Margin="20" Width="50" Height="30"></TextBox>
         </StackPanel>
     </Grid>
-</Window>
+
+```
+![image13](/img/4.1/im04.png?height=400px)
+
+On retrouve deux éléments : un slider, et un textbox. Le databinding se fait dans le Textbox avec 
+Text="{Binding ElementName=mySlider, Path=Value, Mode=OneWay}"
+L’élément ciblé est le Slider (ElementName=mySlider), et l’on veut utiliser sa valeur, donc Path=Value. Le tout en mode OneWay.
+Lancez le programme, et voyez comment évolue le chiffre dans la textbox avec le slider. Bien entendu, modifier le contenue de txtValue ne changera pas le slider.
+
+{{% exercice %}}
+Un petit exemple que vous allez réaliser :
+Créez une grid de 3*3 avec un textbox au centre et 8 buttons sur les bords qui seront databindé au textbox du milieu.
+{{% /exercice %}}
+
+![image13](/img/4.1/im05.png?height=400px)
+
+{{% expand "Correction" %}}
+
+```xml
+<Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="target" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="O" VerticalAlignment="Center"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+            <Button Grid.Column="0" Grid.Row="1" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+            <Button Grid.Column="0" Grid.Row="2" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+
+            <Button Grid.Column="1" Grid.Row="0" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+            <Button Grid.Column="1" Grid.Row="2" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+
+            <Button Grid.Column="2" Grid.Row="0" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+            <Button Grid.Column="2" Grid.Row="1" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+            <Button Grid.Column="2" Grid.Row="2" Content="{Binding ElementName=target, Path=Text, Mode=OneWay}" />
+        </Grid>
+    </Grid>
 
 ```
 
-Vous obtiendrez la fenêtre suivante : 
+{{%/expand%}}
 
-![image11](/img/4.1/im1.png?height=400px)
-
-Essayez de faire varier le slider. Vous verrez alors que la valeur contenue dans la Textbox changera.
-
-![image12](/img/4.1/im2.png?height=400px)
-
-Cependant, si vous essayez d’insérer une valeur dans la Textbox, la valeur du slider ne sera pas mise à jour.
-
-![image13](/img/4.1/im3.png?height=400px)
+---
 
 
+### c. Two Time Databinding
 
-### a. One Way To Source Data Binding
-
-En one way to source databinding, la cible contrôle la mise à jour de la valeur source. Il s’agit tout simplement de l’inverse du one way databinding. Comme pour notre exemple vu en one way, nous allons réaliser l’exemple inverse, c’est-à-dire la textbox va update le slider.
-
-Exemple : Entrez le code suivant :
+Très similaire dans sa nomenclature, le data binding two way se distingue du One Way par un détail : si l’on modifie n’importe lequel des deux, alors l’autre sera aussi modifié.
+Reprenons l’exemple du début, mais avec le data binding two way :
 
 ```xml
-<Window x:Class="exemple_onewaytosource.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:exemple_onewaytosource"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+<Grid>
+        <TextBox x:Name="Affichage" Width="400" Height="200" FontSize="50" Foreground="Purple" Text="Bonjour" TextWrapping="Wrap"/>
+        <TextBox x:Name="relier" Width="400" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="30" Text="{Binding ElementName=Affichage, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+```
+
+![image13](/img/4.1/im06.png?height=400px)
+
+On a dû rajouter un paramètre dans la ligne de databinding, et il s’agit de UpdateSourceTrigger = PropertyChanged. Cela signifie que la source est update au moindre changement dans la cible.
+
+{{% exercice %}}
+Testons cela rapidement : dans une fenêtre, placez trois textbox, une au centre, une à gauche et une à droite. Celle de droite est relié en two way à celle du milieu et celle de gauche uniquement en one way à celle du milieu. Ensuite, essayez d’anticiper leur comportement puis vérifiez en changeant un à un le contenu des textbox.
+{{% /exercice %}}
+
+![image13](/img/4.1/im07.png?height=400px)
+
+{{% expand "Correction" %}}
+Ainsi, modifier : 
+-	A gauche ne change rien dans les deux autres
+-	Au centre modifie les deux qui sont bindés dessus
+-	A droite modifie le centre qui modifie à gauche
+
+```xml
+<Grid>
+        <TextBox x:Name="gauche" HorizontalAlignment="Left" Height="71" Margin="24,103,0,0" TextWrapping="Wrap" Text="{Binding ElementName=centre, Path=Text, Mode=OneWay}" VerticalAlignment="Top" Width="73"/>
+        <TextBox x:Name="centre" HorizontalAlignment="Left" Height="71" Margin="154,103,0,0" TextWrapping="Wrap" Text="bonjour" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="droite" HorizontalAlignment="Left" Height="71" Margin="276,103,0,0" TextWrapping="Wrap" Text="{Binding ElementName=centre, Path=Text, Mode=TwoWay, UpdateSourceTrigger = PropertyChanged}" VerticalAlignment="Top" Width="93"/>
+</Grid>
+
+```
+
+{{%/expand%}}
+
+---
+
+
+### d. One Time Databinding
+
+Le one time databinding fonctionne comme le one way à l’exception qu’il ne fonctionne qu’une seule fois. C’est-à-dire que la valeur cible pourra être changée uniquement à l’initialisation de votre code. Cela signifie qu’elle ne peut être changée que dans votre code WPF, aucune autre extension de code est nécessaire.
+
+### e. One Way To Source Databinding
+
+En one way to source databinding, la cible contrôle la mise à jour de la valeur source. Il s’agit tout simplement de l’inverse du one way databinding. Comme pour notre exemple vu en one way, nous allons réaliser l’exemple inverse, c’est-à-dire la textbox va update le slider.
+On va prendre pour exemple le slider du début. En se plaçant dans le contexte du one way to source , on obtient cela : 
+
+```xml
+<Grid>
         <StackPanel Orientation="Vertical">
 
             <Separator BorderThickness="20" BorderBrush="Black"></Separator>
@@ -88,56 +206,36 @@ Exemple : Entrez le code suivant :
             </TextBox>
         </StackPanel>
     </Grid>
-</Window>
+
 ```
+![image13](/img/4.1/im08.png?height=400px)
 
-Vous obtiendrez alors la fenêtre suivante :
+Cette fois ci, il faut écrire un nombre entre 1 et 100 pour faire bouger le slider, et pas l’inverse ! 
 
-![image13](/img/4.1/im4.PNG?height=400px)
+{{% exercice %}}
+Afin de tester cette propriété, reprenez l’exemple des trois textbox. Cette fois ci, celui de droite sera data bindé avec un one way to source. Observez comment réagissent les textbox avec les différentes modifications alors !
+{{% /exercice %}}
 
-Si vous changez la valeur contenue dans la textbox, le slider bougera en fonction de cette valeur, mais pas inversement.
+![image13](/img/4.1/im09.png?height=400px)
 
-
-### c. One Time Databinding
-
-Le one time databinding fonctionne comme le one way à l’exception qu’il ne fonctionne qu’une seule fois. C’est-à-dire que la valeur cible pourra être changée uniquement à l’initialisation de votre code. Cela signifie qu’elle ne peut être changée que dans votre code WPF, aucune autre extension de code est nécessaire.
-
-### d. Two Way Databinding
-
-Comme son nom l’indique, en two way databinding, la source va update la cible et vice-versa. Cela implique que si la valeur de la source est changée, la valeur de la cible le sera aussi changée. Si la valeur de la cible est changée, la valeur de la source le sera aussi.
-Dans votre code, il faudra alors utiliser l’extension System.Windows.Data.Binding comme ceci :
-•	Passer l’attribut mode en “TwoWay”
-•	Utiliser l’attribut UpdateSourceTrigger pour signaler quand est-ce que la source devrait être updatée. Pour cela, il faut passer la valeur de cet attribut à “PropertyChanged”. La mise à jour de la valeur se fera alors automatiquement.
-
-Voilà un autre exemple : copiez les code ci-dessous dans votre ficher xaml.
+{{% expand "Correction" %}}
+Ainsi, modifier : 
+-	A gauche ne change rien dans les deux autres
+-	Au centre modifie celui de gauche
+-	A droite modifie le centre qui modifie à gauche
 
 ```xml
-<Window x:Class="TwoWayBinding.Window1"
-
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Window1" Height="361.648" Width="543.608">
-    <Grid Height="54" Width="165">
-        <TextBox  Name="textBox" Margin="0,-77,0,0" Height="23" VerticalAlignment="Top"
-                Text ="{Binding ElementName=listBox,
-                        Path=SelectedItem.Content,
-                        Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged}"
-                Background="{Binding ElementName=listBox, Path=SelectedItem.Content, Mode=OneWay}" HorizontalAlignment="Left" Width="165">
-        </TextBox>
-        <ListBox Name="listBox"  >
-            <ListBoxItem Content="Green"/>
-            <ListBoxItem  Content="Yellow" IsSelected="True"/>
-            <ListBoxItem Content="Orange" />
-        </ListBox>
+<Grid>
+        <TextBox x:Name="gauche" HorizontalAlignment="Left" Height="71" Margin="24,103,0,0" TextWrapping="Wrap" Text="{Binding ElementName=centre, Path=Text, Mode=OneWay}" VerticalAlignment="Top" Width="73"/>
+        <TextBox x:Name="centre" HorizontalAlignment="Left" Height="71" Margin="154,103,0,0" TextWrapping="Wrap" Text="bonjour" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="droite" HorizontalAlignment="Left" Height="71" Margin="276,103,0,0" TextWrapping="Wrap" Text="{Binding ElementName=centre, Path=Text, Mode=OneWayToSource, UpdateSourceTrigger = PropertyChanged}" VerticalAlignment="Top" Width="93"/>
     </Grid>
-</Window>
+
 ```
-Vous obtiendrez alors la fenêtre suivante :
 
-![image15](/img/4.1/im5.PNG?height=400px)
+{{%/expand%}}
 
-Lorsque vous parcourez les éléments dans la liste, vous pouvez voir que la valeur de la Textbox et sa couleur changent en même temps que vous choisissez un élément de la liste. De plus, si vous écrivez du texte dans la Textbox, la valeur que vous avez sélectionnée dans la liste changera aussi.
+---
 
 ## 2. Data Binding sur des classes
 
